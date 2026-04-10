@@ -97,6 +97,9 @@ body::before {
 .flame-coral {
   background: radial-gradient(ellipse at 50% 80%, #ffd6d6, #ff9090 40%, #ff6b6b 80%);
 }
+.flame-purple {
+  background: radial-gradient(ellipse at 50% 80%, #f0e0ff, #c084f5 40%, #9b59b6 80%);
+}
 
 .opening-message {
   position: relative;
@@ -140,59 +143,73 @@ body::before {
 }
 
 .sticker-1 {
-  width: 75px;
-  top: 6%;
-  left: 3%;
+  width: 105px;
+  top: 5%;
+  left: 2%;
   animation: floatA 7s ease-in-out infinite;
 }
 
 .sticker-2 {
-  width: 100px;
-  top: 4%;
-  right: 5%;
+  width: 140px;
+  top: 3%;
+  right: 3%;
   animation: floatB 9s ease-in-out infinite;
 }
 
 .sticker-3 {
-  width: 48px;
-  top: 25%;
-  left: 2%;
+  width: 72px;
+  top: 22%;
+  left: 1%;
   animation: floatC 8s ease-in-out infinite;
 }
 
 .sticker-4 {
-  width: 85px;
-  top: 38%;
-  right: 2%;
+  width: 120px;
+  top: 36%;
+  right: 1%;
   animation: floatA 10s ease-in-out infinite;
 }
 
 .sticker-5 {
-  width: 55px;
-  top: 55%;
-  left: 4%;
+  width: 80px;
+  top: 53%;
+  left: 2%;
   animation: floatB 7.5s ease-in-out infinite;
 }
 
 .sticker-6 {
-  width: 55px;
-  top: 60%;
-  right: 4%;
+  width: 80px;
+  top: 58%;
+  right: 2%;
   animation: floatC 8.5s ease-in-out infinite;
 }
 
 .sticker-7 {
-  width: 65px;
-  top: 78%;
-  left: 6%;
+  width: 95px;
+  top: 76%;
+  left: 3%;
   animation: floatA 9.5s ease-in-out infinite;
 }
 
 .sticker-8 {
-  width: 60px;
-  top: 82%;
-  right: 6%;
+  width: 88px;
+  top: 80%;
+  right: 3%;
   animation: floatB 6.5s ease-in-out infinite;
+}
+
+.sticker-9 {
+  width: 80px;
+  top: 67%;
+  left: 1%;
+  animation: floatC 8.2s ease-in-out infinite;
+}
+
+.sticker-10 {
+  width: 80px;
+  top: 48%;
+  right: 1%;
+  animation: floatA 7.8s ease-in-out infinite;
 }
 
 @keyframes floatA {
@@ -459,14 +476,16 @@ section {
    ============================================ */
 
 @media (max-width: 520px) {
-  .sticker-1 { width: 55px; }
-  .sticker-2 { width: 70px; }
-  .sticker-3 { width: 36px; }
-  .sticker-4 { width: 60px; }
-  .sticker-5 { width: 42px; }
-  .sticker-6 { width: 42px; }
-  .sticker-7 { width: 48px; }
-  .sticker-8 { width: 45px; }
+  .sticker-1 { width: 72px; }
+  .sticker-2 { width: 95px; }
+  .sticker-3 { width: 50px; }
+  .sticker-4 { width: 82px; }
+  .sticker-5 { width: 56px; }
+  .sticker-6 { width: 56px; }
+  .sticker-7 { width: 65px; }
+  .sticker-8 { width: 60px; }
+  .sticker-9 { width: 56px; top: 67%; }
+  .sticker-10 { width: 56px; top: 48%; }
 
   .envelope-card {
     width: 220px;

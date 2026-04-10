@@ -16,15 +16,15 @@
     <!-- ===== OPENING ANIMATION ===== -->
     <div class="opening-overlay" id="openingOverlay">
       <div class="flames-container">
-        <div class="flame flame-orange" style="--left:-3%;--w:18vw;--h:55%;--delay:0s;--dur:2s"></div>
+        <div class="flame flame-purple" style="--left:-3%;--w:18vw;--h:55%;--delay:0s;--dur:2s"></div>
         <div class="flame flame-pink" style="--left:7%;--w:15vw;--h:72%;--delay:0.08s;--dur:1.8s"></div>
         <div class="flame flame-yellow" style="--left:17%;--w:20vw;--h:48%;--delay:0.16s;--dur:2.2s"></div>
-        <div class="flame flame-coral" style="--left:28%;--w:16vw;--h:82%;--delay:0.04s;--dur:1.9s"></div>
+        <div class="flame flame-pink" style="--left:28%;--w:16vw;--h:82%;--delay:0.04s;--dur:1.9s"></div>
         <div class="flame flame-orange" style="--left:38%;--w:18vw;--h:52%;--delay:0.12s;--dur:2.1s"></div>
-        <div class="flame flame-pink" style="--left:48%;--w:15vw;--h:68%;--delay:0.18s;--dur:1.7s"></div>
+        <div class="flame flame-purple" style="--left:48%;--w:15vw;--h:68%;--delay:0.18s;--dur:1.7s"></div>
         <div class="flame flame-yellow" style="--left:56%;--w:20vw;--h:56%;--delay:0.02s;--dur:2.3s"></div>
-        <div class="flame flame-coral" style="--left:66%;--w:17vw;--h:76%;--delay:0.1s;--dur:1.85s"></div>
-        <div class="flame flame-orange" style="--left:76%;--w:16vw;--h:46%;--delay:0.14s;--dur:2s"></div>
+        <div class="flame flame-pink" style="--left:66%;--w:17vw;--h:76%;--delay:0.1s;--dur:1.85s"></div>
+        <div class="flame flame-purple" style="--left:76%;--w:16vw;--h:46%;--delay:0.14s;--dur:2s"></div>
         <div class="flame flame-pink" style="--left:86%;--w:20vw;--h:62%;--delay:0.06s;--dur:2.15s"></div>
       </div>
       <p class="opening-message" id="openingMessage">Joyeux 30 ans Marann 🎉</p>
@@ -36,88 +36,187 @@
     <div class="sticker sticker-1" aria-hidden="true">
       <svg viewBox="0 0 100 95" fill="none">
         <path d="M50 88C50 88 5 58 5 30C5 15 15 5 28 5C38 5 46 12 50 20C54 12 62 5 72 5C85 5 95 15 95 30C95 58 50 88 50 88Z" fill="#ff9eb5" stroke="#222" stroke-width="3" stroke-linejoin="round"/>
-        <text x="50" y="42" text-anchor="middle" font-family="Quicksand,sans-serif" font-size="11" font-weight="700" fill="#222">Burn</text>
-        <text x="50" y="56" text-anchor="middle" font-family="Quicksand,sans-serif" font-size="10" font-weight="700" fill="#222">Patriarchy</text>
+        <!-- inner glow -->
+        <path d="M50 80C50 80 14 55 14 32C14 21 21 13 30 13C38 13 45 19 50 27C55 19 62 13 70 13C79 13 86 21 86 32C86 55 50 80 50 80Z" fill="#ffccd8" opacity="0.45"/>
+        <!-- small sparkles -->
+        <path d="M18 18L19.5 22L23.5 18L19.5 14Z" fill="#ff6b8a" opacity="0.6"/>
+        <path d="M78 24L79.5 28L83.5 24L79.5 20Z" fill="#ff6b8a" opacity="0.6"/>
+        <circle cx="30" cy="65" r="2.5" fill="#fff" opacity="0.5"/>
+        <circle cx="68" cy="58" r="2" fill="#fff" opacity="0.5"/>
+        <text x="50" y="46" text-anchor="middle" font-family="Quicksand,sans-serif" font-size="12" font-weight="700" fill="#222">Burn</text>
+        <text x="50" y="61" text-anchor="middle" font-family="Quicksand,sans-serif" font-size="11" font-weight="700" fill="#222">Patriarchy</text>
       </svg>
     </div>
 
     <!-- ACAB with star -->
     <div class="sticker sticker-2" aria-hidden="true">
-      <svg viewBox="0 0 120 50" fill="none">
-        <rect x="2" y="2" width="116" height="46" rx="10" fill="#b8e6ff" stroke="#222" stroke-width="3"/>
-        <text x="55" y="36" text-anchor="middle" font-family="Quicksand,sans-serif" font-size="26" font-weight="800" fill="#222">ACAB</text>
-        <path d="M103 8L105 14H111L106 18L108 24L103 20L98 24L100 18L95 14H101Z" fill="#ffe45d" stroke="#222" stroke-width="1.5"/>
+      <svg viewBox="0 0 130 58" fill="none">
+        <rect x="2" y="2" width="126" height="54" rx="12" fill="#b8e6ff" stroke="#222" stroke-width="3"/>
+        <!-- subtle inner highlight -->
+        <rect x="8" y="6" width="114" height="12" rx="6" fill="#fff" opacity="0.3"/>
+        <!-- small dots decoration -->
+        <circle cx="14" cy="44" r="3" fill="#5bcefa" stroke="#222" stroke-width="1.2"/>
+        <circle cx="14" cy="44" r="1.2" fill="#fff"/>
+        <text x="60" y="40" text-anchor="middle" font-family="Quicksand,sans-serif" font-size="27" font-weight="800" fill="#222">ACAB</text>
+        <!-- star with inner fill -->
+        <path d="M112 7L114.2 13.6H121.2L115.7 17.6L117.9 24.2L112 20.2L106.1 24.2L108.3 17.6L102.8 13.6H109.8Z" fill="#ffe45d" stroke="#222" stroke-width="1.5"/>
+        <circle cx="112" cy="17" r="2.5" fill="#fff" opacity="0.5"/>
       </svg>
     </div>
 
     <!-- Raised fist -->
     <div class="sticker sticker-3" aria-hidden="true">
       <svg viewBox="0 0 60 85" fill="none">
-        <rect x="18" y="52" width="24" height="30" rx="4" fill="#ffcba4" stroke="#222" stroke-width="2.5"/>
-        <rect x="11" y="15" width="38" height="38" rx="10" fill="#ffcba4" stroke="#222" stroke-width="2.5"/>
-        <rect x="6" y="32" width="11" height="20" rx="5.5" fill="#ffcba4" stroke="#222" stroke-width="2.5"/>
-        <line x1="21" y1="20" x2="21" y2="50" stroke="#222" stroke-width="1.5" opacity="0.3"/>
-        <line x1="30" y1="18" x2="30" y2="50" stroke="#222" stroke-width="1.5" opacity="0.3"/>
-        <line x1="39" y1="20" x2="39" y2="50" stroke="#222" stroke-width="1.5" opacity="0.3"/>
+        <!-- wrist/arm -->
+        <rect x="18" y="52" width="24" height="32" rx="6" fill="#ffcba4" stroke="#222" stroke-width="2.5"/>
+        <!-- palm -->
+        <rect x="11" y="14" width="38" height="40" rx="11" fill="#ffcba4" stroke="#222" stroke-width="2.5"/>
+        <!-- thumb -->
+        <rect x="5" y="30" width="13" height="21" rx="6.5" fill="#ffcba4" stroke="#222" stroke-width="2.5"/>
+        <!-- finger lines -->
+        <line x1="21" y1="18" x2="21" y2="52" stroke="#222" stroke-width="1.5" opacity="0.25"/>
+        <line x1="30" y1="16" x2="30" y2="52" stroke="#222" stroke-width="1.5" opacity="0.25"/>
+        <line x1="39" y1="18" x2="39" y2="52" stroke="#222" stroke-width="1.5" opacity="0.25"/>
+        <!-- knuckle highlights -->
+        <ellipse cx="21" cy="18" rx="3.5" ry="2" fill="#fff" opacity="0.35"/>
+        <ellipse cx="30" cy="16" rx="3.5" ry="2" fill="#fff" opacity="0.35"/>
+        <ellipse cx="39" cy="18" rx="3.5" ry="2" fill="#fff" opacity="0.35"/>
+        <!-- cuff band -->
+        <rect x="18" y="52" width="24" height="7" rx="3" fill="#e8a88a" stroke="#222" stroke-width="1.5"/>
       </svg>
     </div>
 
     <!-- Rainbow -->
     <div class="sticker sticker-4" aria-hidden="true">
-      <svg viewBox="0 0 100 60" fill="none">
-        <path d="M10 55A40 40 0 0190 55" stroke="#ff6b6b" stroke-width="7" stroke-linecap="round"/>
-        <path d="M17 55A33 33 0 0183 55" stroke="#ffa500" stroke-width="7" stroke-linecap="round"/>
-        <path d="M24 55A26 26 0 0176 55" stroke="#ffe45d" stroke-width="7" stroke-linecap="round"/>
-        <path d="M31 55A19 19 0 0169 55" stroke="#7ddf7d" stroke-width="7" stroke-linecap="round"/>
-        <path d="M38 55A12 12 0 0162 55" stroke="#5bcefa" stroke-width="7" stroke-linecap="round"/>
-        <path d="M45 55A5 5 0 0155 55" stroke="#d28aff" stroke-width="7" stroke-linecap="round"/>
+      <svg viewBox="0 0 110 72" fill="none">
+        <!-- clouds on both ends -->
+        <ellipse cx="16" cy="60" rx="13" ry="9" fill="#fff" stroke="#222" stroke-width="2"/>
+        <ellipse cx="9" cy="58" rx="9" ry="7" fill="#fff" stroke="#222" stroke-width="2"/>
+        <ellipse cx="94" cy="60" rx="13" ry="9" fill="#fff" stroke="#222" stroke-width="2"/>
+        <ellipse cx="101" cy="58" rx="9" ry="7" fill="#fff" stroke="#222" stroke-width="2"/>
+        <!-- rainbow arcs -->
+        <path d="M10 62A45 45 0 01100 62" stroke="#ff6b6b" stroke-width="7" stroke-linecap="round"/>
+        <path d="M17 62A38 38 0 0193 62" stroke="#ffa500" stroke-width="7" stroke-linecap="round"/>
+        <path d="M24 62A31 31 0 0186 62" stroke="#ffe45d" stroke-width="7" stroke-linecap="round"/>
+        <path d="M31 62A24 24 0 0179 62" stroke="#7ddf7d" stroke-width="7" stroke-linecap="round"/>
+        <path d="M38 62A17 17 0 0172 62" stroke="#5bcefa" stroke-width="7" stroke-linecap="round"/>
+        <path d="M45 62A10 10 0 0165 62" stroke="#d28aff" stroke-width="7" stroke-linecap="round"/>
+        <!-- sparkle -->
+        <path d="M55 14L56.5 20L62 18L57.5 22L60 28L55 24L50 28L52.5 22L48 18L53.5 20Z" fill="#ffe45d" stroke="#222" stroke-width="1"/>
       </svg>
     </div>
 
     <!-- Cute anarchist A -->
     <div class="sticker sticker-5" aria-hidden="true">
-      <svg viewBox="0 0 70 80" fill="none">
-        <circle cx="35" cy="40" r="22" fill="#ffd6e0" stroke="#222" stroke-width="3"/>
-        <path d="M35 12L19 68M35 12L51 68M23 52H47" stroke="#222" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="60" cy="14" r="4" fill="#ff9eb5"/>
-        <circle cx="10" cy="65" r="3.5" fill="#b8e6ff"/>
+      <svg viewBox="0 0 80 90" fill="none">
+        <!-- outer glow ring -->
+        <circle cx="40" cy="46" r="28" fill="#ffd6e0" stroke="#ff9eb5" stroke-width="2" opacity="0.5"/>
+        <circle cx="40" cy="46" r="22" fill="#ffd6e0" stroke="#222" stroke-width="3"/>
+        <!-- anarchist A -->
+        <path d="M40 16L22 72M40 16L58 72M26 58H54" stroke="#222" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- decorative dots -->
+        <circle cx="67" cy="18" r="5" fill="#ff9eb5" stroke="#222" stroke-width="1.5"/>
+        <circle cx="13" cy="72" r="4.5" fill="#b8e6ff" stroke="#222" stroke-width="1.5"/>
+        <circle cx="70" cy="68" r="3.5" fill="#ffe45d" stroke="#222" stroke-width="1.2"/>
+        <circle cx="10" cy="22" r="3" fill="#c1f0db" stroke="#222" stroke-width="1.2"/>
       </svg>
     </div>
 
     <!-- Venus symbol with fist -->
     <div class="sticker sticker-6" aria-hidden="true">
-      <svg viewBox="0 0 70 100" fill="none">
-        <circle cx="35" cy="32" r="24" fill="#e8b4cb" stroke="#222" stroke-width="3"/>
-        <rect x="23" y="20" width="24" height="20" rx="7" fill="#ffcba4" stroke="#222" stroke-width="2"/>
-        <rect x="19" y="30" width="8" height="12" rx="4" fill="#ffcba4" stroke="#222" stroke-width="2"/>
-        <line x1="35" y1="56" x2="35" y2="92" stroke="#222" stroke-width="3" stroke-linecap="round"/>
-        <line x1="24" y1="78" x2="46" y2="78" stroke="#222" stroke-width="3" stroke-linecap="round"/>
+      <svg viewBox="0 0 80 112" fill="none">
+        <!-- outer decorative ring -->
+        <circle cx="40" cy="35" r="31" fill="#f0c8dd" stroke="#ff9eb5" stroke-width="2" opacity="0.4"/>
+        <circle cx="40" cy="35" r="26" fill="#e8b4cb" stroke="#222" stroke-width="3"/>
+        <!-- inner highlight -->
+        <circle cx="40" cy="35" r="18" fill="#f5cfe0" opacity="0.35"/>
+        <!-- fist inside circle -->
+        <rect x="28" y="22" width="24" height="22" rx="7" fill="#ffcba4" stroke="#222" stroke-width="2"/>
+        <rect x="22" y="33" width="9" height="13" rx="4.5" fill="#ffcba4" stroke="#222" stroke-width="2"/>
+        <line x1="34" y1="26" x2="34" y2="43" stroke="#222" stroke-width="1.2" opacity="0.25"/>
+        <line x1="40" y1="24" x2="40" y2="43" stroke="#222" stroke-width="1.2" opacity="0.25"/>
+        <!-- vertical line -->
+        <line x1="40" y1="61" x2="40" y2="100" stroke="#222" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- horizontal cross -->
+        <line x1="27" y1="85" x2="53" y2="85" stroke="#222" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- sparkle near cross -->
+        <circle cx="57" cy="80" r="3" fill="#ff9eb5" opacity="0.6"/>
+        <circle cx="23" cy="90" r="2.5" fill="#b8e6ff" opacity="0.6"/>
       </svg>
     </div>
 
     <!-- Trans flag -->
     <div class="sticker sticker-7" aria-hidden="true">
-      <svg viewBox="0 0 75 50" fill="none">
-        <defs><clipPath id="tc"><rect x="3" y="3" width="69" height="44" rx="4"/></clipPath></defs>
+      <svg viewBox="0 0 90 62" fill="none">
+        <defs><clipPath id="tc"><rect x="3" y="3" width="84" height="56" rx="6"/></clipPath></defs>
         <g clip-path="url(#tc)">
-          <rect x="3" y="3" width="69" height="9" fill="#5bcefa"/>
-          <rect x="3" y="12" width="69" height="9" fill="#f5a9b8"/>
-          <rect x="3" y="21" width="69" height="9" fill="#fff"/>
-          <rect x="3" y="30" width="69" height="9" fill="#f5a9b8"/>
-          <rect x="3" y="39" width="69" height="8" fill="#5bcefa"/>
+          <rect x="3" y="3" width="84" height="11.2" fill="#5bcefa"/>
+          <rect x="3" y="14.2" width="84" height="11.2" fill="#f5a9b8"/>
+          <rect x="3" y="25.4" width="84" height="11.2" fill="#fff"/>
+          <rect x="3" y="36.6" width="84" height="11.2" fill="#f5a9b8"/>
+          <rect x="3" y="47.8" width="84" height="11.2" fill="#5bcefa"/>
+          <!-- subtle sheen -->
+          <rect x="3" y="3" width="84" height="8" fill="#fff" opacity="0.15"/>
         </g>
-        <rect x="3" y="3" width="69" height="44" rx="4" fill="none" stroke="#222" stroke-width="3"/>
+        <rect x="3" y="3" width="84" height="56" rx="6" fill="none" stroke="#222" stroke-width="3"/>
+        <!-- small white heart -->
+        <path d="M75 10C75 10 71 7 71 5C71 3 72.5 2 74 2C74.8 2 75 2.8 75 3C75 2.8 75.2 2 76 2C77.5 2 79 3 79 5C79 7 75 10 75 10Z" fill="#fff" opacity="0.7"/>
       </svg>
     </div>
 
     <!-- Sparkle cluster -->
     <div class="sticker sticker-8" aria-hidden="true">
-      <svg viewBox="0 0 80 80" fill="none">
-        <path d="M40 8L44 30L66 34L44 38L40 60L36 38L14 34L36 30Z" fill="#ffe45d" stroke="#222" stroke-width="2"/>
-        <path d="M62 55L64 63L72 61L65 66L68 74L62 68L56 73L59 66L52 61L60 63Z" fill="#ff9eb5" stroke="#222" stroke-width="1.5"/>
-        <circle cx="18" cy="65" r="3.5" fill="#b8e6ff" stroke="#222" stroke-width="1.2"/>
-        <circle cx="65" cy="14" r="2.5" fill="#c1f0db" stroke="#222" stroke-width="1"/>
-        <circle cx="20" cy="16" r="2" fill="#e0c3fc" stroke="#222" stroke-width="1"/>
+      <svg viewBox="0 0 90 90" fill="none">
+        <!-- big star -->
+        <path d="M45 8L50 34L76 39L50 44L45 70L40 44L14 39L40 34Z" fill="#ffe45d" stroke="#222" stroke-width="2.5"/>
+        <!-- inner star highlight -->
+        <path d="M45 22L48 36L62 39L48 42L45 56L42 42L28 39L42 36Z" fill="#fff5a0" opacity="0.6"/>
+        <!-- medium star -->
+        <path d="M70 60L72.5 70L82 68L74 74L77 84L70 77L63 84L66 74L58 68L67.5 70Z" fill="#ff9eb5" stroke="#222" stroke-width="1.8"/>
+        <!-- small circles -->
+        <circle cx="18" cy="72" r="5" fill="#b8e6ff" stroke="#222" stroke-width="1.5"/>
+        <circle cx="14" cy="69" r="2.5" fill="#fff" opacity="0.5"/>
+        <circle cx="72" cy="14" r="4" fill="#c1f0db" stroke="#222" stroke-width="1.3"/>
+        <circle cx="20" cy="18" r="3.5" fill="#e0c3fc" stroke="#222" stroke-width="1.3"/>
+        <!-- tiny sparkle dots -->
+        <circle cx="83" cy="35" r="2.5" fill="#ffe45d" opacity="0.7"/>
+        <circle cx="8" cy="50" r="2" fill="#ff9eb5" opacity="0.7"/>
+      </svg>
+    </div>
+
+    <!-- Pink flame sticker -->
+    <div class="sticker sticker-9" aria-hidden="true">
+      <svg viewBox="0 0 60 90" fill="none">
+        <!-- outer glow -->
+        <ellipse cx="30" cy="65" rx="22" ry="18" fill="#ffb8d0" opacity="0.35"/>
+        <!-- main flame body -->
+        <path d="M30 85C30 85 8 68 8 50C8 36 16 28 22 22C22 22 20 32 26 34C26 34 18 20 30 8C30 8 28 22 36 26C36 26 44 20 42 10C50 18 52 32 44 46C48 42 50 36 50 30C54 40 52 58 30 85Z" fill="#ff9eb5" stroke="#222" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- inner lighter flame -->
+        <path d="M30 72C30 72 16 58 18 46C20 38 24 34 28 30C28 30 26 36 30 38C30 38 34 32 32 24C38 30 40 40 36 50C38 47 40 42 40 38C43 44 42 58 30 72Z" fill="#ffd6e6" opacity="0.7"/>
+        <!-- tip glow -->
+        <ellipse cx="30" cy="16" rx="5" ry="7" fill="#ffe0ee" opacity="0.5"/>
+        <!-- sparkles -->
+        <circle cx="48" cy="50" r="2.5" fill="#ff6b8a" opacity="0.6"/>
+        <circle cx="12" cy="45" r="2" fill="#ff9eb5" opacity="0.6"/>
+        <path d="M50 30L51.5 35L56 33L52 37L54 42L50 38L46 42L48 37L44 33L48.5 35Z" fill="#ffd6e0" stroke="#222" stroke-width="1" opacity="0.8"/>
+      </svg>
+    </div>
+
+    <!-- Purple flame sticker -->
+    <div class="sticker sticker-10" aria-hidden="true">
+      <svg viewBox="0 0 60 90" fill="none">
+        <!-- outer glow -->
+        <ellipse cx="30" cy="65" rx="22" ry="18" fill="#c9a0f0" opacity="0.3"/>
+        <!-- main flame body -->
+        <path d="M30 85C30 85 8 68 8 50C8 36 16 28 22 22C22 22 20 32 26 34C26 34 18 20 30 8C30 8 28 22 36 26C36 26 44 20 42 10C50 18 52 32 44 46C48 42 50 36 50 30C54 40 52 58 30 85Z" fill="#c084f5" stroke="#222" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- inner lighter flame -->
+        <path d="M30 72C30 72 16 58 18 46C20 38 24 34 28 30C28 30 26 36 30 38C30 38 34 32 32 24C38 30 40 40 36 50C38 47 40 42 40 38C43 44 42 58 30 72Z" fill="#e5ccff" opacity="0.7"/>
+        <!-- tip glow -->
+        <ellipse cx="30" cy="16" rx="5" ry="7" fill="#f0e0ff" opacity="0.55"/>
+        <!-- sparkles -->
+        <circle cx="48" cy="50" r="2.5" fill="#9b59b6" opacity="0.6"/>
+        <circle cx="12" cy="45" r="2" fill="#c084f5" opacity="0.6"/>
+        <path d="M10 28L11.5 33L16 31L12 35L14 40L10 36L6 40L8 35L4 31L8.5 33Z" fill="#e0c3fc" stroke="#222" stroke-width="1" opacity="0.8"/>
       </svg>
     </div>
 
