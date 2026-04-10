@@ -1,106 +1,143 @@
-const openingOverlay = document.getElementById("openingOverlay");
-const giftButton = document.getElementById("giftButton");
-const giftList = document.getElementById("giftList");
-const giftItemsContainer = document.getElementById("giftItems");
-const confettiCanvas = document.getElementById("confettiCanvas");
-const ctx = confettiCanvas.getContext("2d");
+(function () {
+  const overlay = document.getElementById("openingOverlay");
+  const message = document.getElementById("openingMessage");
+  const mainContent = document.getElementById("mainContent");
+  const giftBox = document.getElementById("giftBox");
+  const envelopesContainer = document.getElementById("envelopes");
 
-const confettiPieces = [];
-let animationFrame = null;
-const gifts = [
-  "Un atelier pour creer ta bague en argent",
-  "Deux places pour aller voir King Kong Meuf + Parcours Sante (deux groupes de punk feminin) le 29 Mai"
-];
+  let giftsRevealed = false;
 
-function resizeCanvas() {
-  confettiCanvas.width = window.innerWidth;
-  confettiCanvas.height = window.innerHeight;
-}
+  // --- OPENING SEQUENCE ---
+  setTimeout(function () {
+    message.classList.add("show");
+  }, 800);
 
-function openIntroOverlay() {
-  setTimeout(() => {
-    openingOverlay.classList.add("hidden-overlay");
-  }, 3200);
-}
-
-function createConfettiBurst() {
-  const colors = ["#ff4fa5", "#49f2ff", "#ffe65d", "#ffffff", "#9047ff", "#ff944d"];
-  const pieceCount = 180;
-  const centerX = confettiCanvas.width / 2;
-  const centerY = confettiCanvas.height / 2;
-
-  for (let i = 0; i < pieceCount; i += 1) {
-    const angle = Math.random() * Math.PI * 2;
-    const speed = Math.random() * 9 + 2;
-    confettiPieces.push({
-      x: centerX,
-      y: centerY,
-      vx: Math.cos(angle) * speed,
-      vy: Math.sin(angle) * speed - 2,
-      gravity: 0.13 + Math.random() * 0.1,
-      size: Math.random() * 7 + 3,
-      rotation: Math.random() * 360,
-      rotationSpeed: Math.random() * 16 - 8,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      life: 150 + Math.random() * 35
+  setTimeout(function () {
+    overlay.classList.add("fade-out");
+    mainContent.classList.add("show");
+    document.querySelectorAll(".sticker").forEach(function (s, i) {
+      setTimeout(function () {
+        s.classList.add("visible");
+      }, i * 120);
     });
-  }
+  }, 3200);
 
-  if (!animationFrame) {
-    animateConfetti();
-  }
-}
+  // --- DOODLE FACES FOR AVATARS ---
+  var faces = [
+    { eyes: "round", mouth: "smile" },
+    { eyes: "dot", mouth: "open" },
+    { eyes: "happy", mouth: "grin" },
+    { eyes: "round", mouth: "cat" },
+    { eyes: "dot", mouth: "smile" },
+    { eyes: "happy", mouth: "open" },
+    { eyes: "round", mouth: "grin" },
+    { eyes: "dot", mouth: "cat" },
+    { eyes: "happy", mouth: "smile" },
+    { eyes: "round", mouth: "open" },
+    { eyes: "dot", mouth: "grin" },
+    { eyes: "happy", mouth: "cat" },
+    { eyes: "round", mouth: "smile" }
+  ];
 
-function animateConfetti() {
-  ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-
-  for (let i = confettiPieces.length - 1; i >= 0; i -= 1) {
-    const piece = confettiPieces[i];
-    piece.vy += piece.gravity;
-    piece.x += piece.vx;
-    piece.y += piece.vy;
-    piece.rotation += piece.rotationSpeed;
-    piece.life -= 1;
-
-    ctx.save();
-    ctx.translate(piece.x, piece.y);
-    ctx.rotate((piece.rotation * Math.PI) / 180);
-    ctx.fillStyle = piece.color;
-    ctx.fillRect(-piece.size / 2, -piece.size / 2, piece.size, piece.size);
-    ctx.restore();
-
-    if (piece.life <= 0 || piece.y > confettiCanvas.height + 30) {
-      confettiPieces.splice(i, 1);
+  function drawEyes(type) {
+    switch (type) {
+      case "round":
+        return '<circle cx="20" cy="24" r="3.5" fill="#222"/><circle cx="36" cy="24" r="3.5" fill="#222"/><circle cx="21.5" cy="23" r="1.2" fill="#fff"/><circle cx="37.5" cy="23" r="1.2" fill="#fff"/>';
+      case "dot":
+        return '<circle cx="20" cy="25" r="2.5" fill="#222"/><circle cx="36" cy="25" r="2.5" fill="#222"/>';
+      case "happy":
+        return '<path d="M16 24Q20 20 24 24" stroke="#222" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M32 24Q36 20 40 24" stroke="#222" stroke-width="2.5" fill="none" stroke-linecap="round"/>';
+      default:
+        return '<circle cx="20" cy="24" r="3" fill="#222"/><circle cx="36" cy="24" r="3" fill="#222"/>';
     }
   }
 
-  if (confettiPieces.length > 0) {
-    animationFrame = requestAnimationFrame(animateConfetti);
-  } else {
-    cancelAnimationFrame(animationFrame);
-    animationFrame = null;
+  function drawMouth(type) {
+    switch (type) {
+      case "smile":
+        return '<path d="M22 34Q28 40 34 34" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round"/>';
+      case "open":
+        return '<ellipse cx="28" cy="35" rx="5" ry="4" fill="#222"/>';
+      case "grin":
+        return '<path d="M20 33Q28 42 36 33" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round"/><line x1="24" y1="35" x2="32" y2="35" stroke="#222" stroke-width="1" opacity="0.3"/>';
+      case "cat":
+        return '<path d="M22 34L28 37L34 34" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
+      default:
+        return '<path d="M22 34Q28 40 34 34" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round"/>';
+    }
   }
-}
 
-function setupGiftInteraction() {
-  let opened = false;
-  giftButton.addEventListener("click", () => {
-    opened = !opened;
-    giftButton.classList.toggle("opened", opened);
-    giftButton.setAttribute("aria-expanded", String(opened));
-    giftList.classList.toggle("hidden", !opened);
-    createConfettiBurst();
+  var cheekColors = ["#ffb5c5", "#d4aaff", "#a5dbb5", "#ffd6a5", "#a5d4f5", "#ffa5c5"];
+
+  document.querySelectorAll(".avatar").forEach(function (avatar, idx) {
+    var face = faces[idx % faces.length];
+    var cheekColor = cheekColors[idx % cheekColors.length];
+    var svg = '<svg viewBox="0 0 56 56" fill="none" style="width:100%;height:100%">';
+    svg += drawEyes(face.eyes);
+    svg += drawMouth(face.mouth);
+    svg += '<circle cx="13" cy="32" r="4" fill="' + cheekColor + '" opacity="0.45"/>';
+    svg += '<circle cx="43" cy="32" r="4" fill="' + cheekColor + '" opacity="0.45"/>';
+    svg += "</svg>";
+    avatar.innerHTML = svg;
   });
-}
 
-function renderGifts() {
-  const giftMarkup = gifts.map((gift) => `<li>${gift}</li>`).join("");
-  giftItemsContainer.innerHTML = giftMarkup;
-}
+  // --- GIFT INTERACTION ---
+  function revealGifts() {
+    if (giftsRevealed) return;
+    giftsRevealed = true;
 
-resizeCanvas();
-openIntroOverlay();
-setupGiftInteraction();
-renderGifts();
+    giftBox.style.animation = "none";
 
-window.addEventListener("resize", resizeCanvas);
+    confetti({
+      particleCount: 150,
+      spread: 80,
+      origin: { y: 0.55 },
+      colors: ["#ffd6e0", "#e0c3fc", "#c1f0db", "#ffd8be", "#fff5c3", "#b8e6ff", "#ff9eb5", "#ffe45d"]
+    });
+
+    setTimeout(function () {
+      confetti({
+        particleCount: 80,
+        spread: 60,
+        origin: { x: 0.3, y: 0.5 },
+        colors: ["#ffd6e0", "#e0c3fc", "#c1f0db", "#ff9eb5"]
+      });
+    }, 300);
+
+    setTimeout(function () {
+      confetti({
+        particleCount: 80,
+        spread: 60,
+        origin: { x: 0.7, y: 0.5 },
+        colors: ["#ffd8be", "#fff5c3", "#b8e6ff", "#ffe45d"]
+      });
+    }, 500);
+
+    envelopesContainer.classList.remove("hidden");
+
+    document.querySelectorAll(".envelope-card").forEach(function (card, i) {
+      card.style.opacity = "0";
+      card.style.transform = "translateY(20px)";
+      setTimeout(function () {
+        card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+      }, 600 + i * 250);
+    });
+  }
+
+  giftBox.addEventListener("click", revealGifts);
+  giftBox.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      revealGifts();
+    }
+  });
+
+  // --- ENVELOPE FLIP ---
+  document.querySelectorAll(".envelope-card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      card.classList.toggle("flipped");
+    });
+  });
+})();
