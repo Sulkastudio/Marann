@@ -142,59 +142,59 @@ body::before {
   filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.12));
 }
 
-/* sticker-1: rainbow heart — top left */
+/* sticker-1: rainbow heart — top left, pulled inward */
 .sticker-1 {
   width: 190px;
   top: 4%;
-  left: 1%;
+  left: max(8px, calc(50% - 400px));
   animation: floatA 7s ease-in-out infinite;
 }
 
-/* sticker-2: ACAB badge — top right */
+/* sticker-2: ACAB badge — top right, pulled inward */
 .sticker-2 {
   width: 220px;
   top: 3%;
-  right: 0%;
+  right: max(8px, calc(50% - 410px));
   animation: floatB 9s ease-in-out infinite;
 }
 
-/* sticker-3: rainbow — upper-right side */
+/* sticker-3: rainbow — upper-right, pulled inward */
 .sticker-3 {
   width: 200px;
   top: 22%;
-  right: 0%;
+  right: max(8px, calc(50% - 400px));
   animation: floatC 10s ease-in-out infinite;
 }
 
-/* sticker-4: trans flag — left middle */
+/* sticker-4: trans flag — left middle, pulled inward */
 .sticker-4 {
   width: 175px;
-  top: 35%;
-  left: 0%;
+  top: 38%;
+  left: max(8px, calc(50% - 400px));
   animation: floatA 8.5s ease-in-out infinite;
 }
 
-/* sticker-5: sparkle cluster — right middle-low */
+/* sticker-5: sparkle cluster — right middle-low, pulled inward */
 .sticker-5 {
   width: 170px;
-  top: 55%;
-  right: 0%;
+  top: 57%;
+  right: max(8px, calc(50% - 400px));
   animation: floatB 7.5s ease-in-out infinite;
 }
 
-/* sticker-6: pink flame — lower left */
+/* sticker-6: pink flame — lower left, pulled inward */
 .sticker-6 {
   width: 150px;
-  top: 68%;
-  left: 1%;
+  top: 70%;
+  left: max(8px, calc(50% - 390px));
   animation: floatC 8.2s ease-in-out infinite;
 }
 
-/* sticker-7: purple flame — bottom right */
+/* sticker-7: purple flame — bottom right, pulled inward */
 .sticker-7 {
   width: 150px;
-  top: 80%;
-  right: 1%;
+  top: 82%;
+  right: max(8px, calc(50% - 390px));
   animation: floatA 7.8s ease-in-out infinite;
 }
 
@@ -462,13 +462,13 @@ section {
    ============================================ */
 
 @media (max-width: 520px) {
-  .sticker-1 { width: 110px; }
-  .sticker-2 { width: 130px; }
-  .sticker-3 { width: 120px; }
-  .sticker-4 { width: 105px; }
-  .sticker-5 { width: 100px; }
-  .sticker-6 { width: 90px; }
-  .sticker-7 { width: 90px; }
+  .sticker-1 { width: 100px; left: 4px; }
+  .sticker-2 { width: 120px; right: 4px; }
+  .sticker-3 { width: 110px; right: 4px; }
+  .sticker-4 { width: 95px;  left: 4px; }
+  .sticker-5 { width: 90px;  right: 4px; }
+  .sticker-6 { width: 80px;  left: 4px; }
+  .sticker-7 { width: 80px;  right: 4px; }
 
   .envelope-card {
     width: 220px;
