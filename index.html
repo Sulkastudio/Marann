@@ -40,8 +40,8 @@
         <circle cx="38" cy="84" r="3" fill="#fff" opacity="0.45"/>
         <circle cx="82" cy="78" r="2.5" fill="#fff" opacity="0.45"/>
         <!-- text: airy Caveat -->
-        <text x="60" y="57" text-anchor="middle" font-family="Caveat,cursive" font-size="18" font-weight="400" fill="#fff" letter-spacing="1.5" opacity="0.95">Burn</text>
-        <text x="60" y="76" text-anchor="middle" font-family="Caveat,cursive" font-size="15" font-weight="400" fill="#fff" letter-spacing="0.5" opacity="0.95">Patriarchy</text>
+        <text x="60" y="48" text-anchor="middle" font-family="Caveat,cursive" font-size="18" font-weight="400" fill="#fff" letter-spacing="1.5" opacity="0.95">Burn</text>
+        <text x="60" y="66" text-anchor="middle" font-family="Caveat,cursive" font-size="15" font-weight="400" fill="#fff" letter-spacing="0.5" opacity="0.95">Patriarchy</text>
       </svg>
     </div>
 
@@ -77,25 +77,25 @@
             <rect x="0" y="0" width="130" height="73"/>
           </clipPath>
         </defs>
-        <!-- rainbow arcs, drawn outermost first, sweep=0 = upward -->
+        <!-- rainbow arcs — large-arc=1 sweep=1 draws the upward semicircle -->
         <g clip-path="url(#rc)">
-          <path d="M10 72 A55 55 0 0 0 120 72" stroke="#ff6060" stroke-width="9" fill="none" stroke-linecap="butt"/>
-          <path d="M17 72 A48 48 0 0 0 113 72" stroke="#ffa040" stroke-width="9" fill="none" stroke-linecap="butt"/>
-          <path d="M24 72 A41 41 0 0 0 106 72" stroke="#ffe050" stroke-width="9" fill="none" stroke-linecap="butt"/>
-          <path d="M31 72 A34 34 0 0 0  99 72" stroke="#60dd60" stroke-width="9" fill="none" stroke-linecap="butt"/>
-          <path d="M38 72 A27 27 0 0 0  92 72" stroke="#50c8f8" stroke-width="9" fill="none" stroke-linecap="butt"/>
-          <path d="M45 72 A20 20 0 0 0  85 72" stroke="#c060f8" stroke-width="9" fill="none" stroke-linecap="butt"/>
+          <path d="M10 72 A55 55 0 1 1 120 72" stroke="#ff6060" stroke-width="9" fill="none" stroke-linecap="butt"/>
+          <path d="M17 72 A48 48 0 1 1 113 72" stroke="#ffa040" stroke-width="9" fill="none" stroke-linecap="butt"/>
+          <path d="M24 72 A41 41 0 1 1 106 72" stroke="#ffe050" stroke-width="9" fill="none" stroke-linecap="butt"/>
+          <path d="M31 72 A34 34 0 1 1  99 72" stroke="#60dd60" stroke-width="9" fill="none" stroke-linecap="butt"/>
+          <path d="M38 72 A27 27 0 1 1  92 72" stroke="#50c8f8" stroke-width="9" fill="none" stroke-linecap="butt"/>
+          <path d="M45 72 A20 20 0 1 1  85 72" stroke="#c060f8" stroke-width="9" fill="none" stroke-linecap="butt"/>
         </g>
         <!-- left cloud cluster -->
-        <ellipse cx="18"  cy="74" rx="18" ry="13" fill="#fff"/>
-        <ellipse cx="8"   cy="71" rx="12" ry="10" fill="#fff"/>
-        <ellipse cx="28"  cy="71" rx="13" ry="9"  fill="#fff"/>
+        <ellipse cx="18"  cy="76" rx="18" ry="13" fill="#fff"/>
+        <ellipse cx="6"   cy="73" rx="12" ry="10" fill="#fff"/>
+        <ellipse cx="30"  cy="73" rx="13" ry="9"  fill="#fff"/>
         <!-- right cloud cluster -->
-        <ellipse cx="112" cy="74" rx="18" ry="13" fill="#fff"/>
-        <ellipse cx="122" cy="71" rx="12" ry="10" fill="#fff"/>
-        <ellipse cx="102" cy="71" rx="13" ry="9"  fill="#fff"/>
+        <ellipse cx="112" cy="76" rx="18" ry="13" fill="#fff"/>
+        <ellipse cx="124" cy="73" rx="12" ry="10" fill="#fff"/>
+        <ellipse cx="100" cy="73" rx="13" ry="9"  fill="#fff"/>
         <!-- sparkle above -->
-        <path d="M65 10L67 18.5L75.5 16.5L68.5 23L71.5 31.5L65 26L58.5 31.5L61.5 23L54.5 16.5L63 18.5Z" fill="#ffe45d" opacity="0.9"/>
+        <path d="M65 8L67 17L76 15L69 22L72 31L65 25.5L58 31L61 22L54 15L63 17Z" fill="#ffe45d" opacity="0.9"/>
       </svg>
     </div>
 
@@ -156,51 +156,61 @@
 
     <!-- 6 · Pink flame -->
     <div class="sticker sticker-6" aria-hidden="true">
-      <svg viewBox="0 0 70 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="pf" cx="50%" cy="78%" r="62%">
-            <stop offset="0%"   stop-color="#ffe8f5"/>
-            <stop offset="40%"  stop-color="#ff9eb5"/>
-            <stop offset="100%" stop-color="#f04090"/>
+          <radialGradient id="pf" cx="50%" cy="82%" r="65%">
+            <stop offset="0%"   stop-color="#fff0f8"/>
+            <stop offset="35%"  stop-color="#ffaacf"/>
+            <stop offset="75%"  stop-color="#f04090"/>
+            <stop offset="100%" stop-color="#c0206a"/>
+          </radialGradient>
+          <radialGradient id="pfcore" cx="50%" cy="70%" r="45%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <!-- base glow -->
-        <ellipse cx="35" cy="87" rx="30" ry="14" fill="#ffb8d0" opacity="0.28"/>
-        <!-- flame body -->
-        <path d="M35 100C35 100 9 80 9 58C9 42 19 32 26 25C26 25 24 37 31 40C31 40 22 24 35 9C35 9 33 26 43 31C43 31 53 23 51 12C60 22 63 39 53 55C58 50 60 42 60 35C65 48 63 69 35 100Z" fill="url(#pf)"/>
-        <!-- inner bright core -->
-        <path d="M35 86C35 86 20 68 22 54C24 44 29 40 33 35C33 35 31 43 35 46C35 46 40 39 38 28C46 36 48 49 43 60C46 56 48 49 48 44C52 53 51 70 35 86Z" fill="#fff" opacity="0.2"/>
+        <!-- soft base shadow -->
+        <ellipse cx="40" cy="98" rx="28" ry="9" fill="#f04090" opacity="0.18"/>
+        <!-- clean teardrop flame -->
+        <path d="M40 102 C22 102 8 88 8 72 C8 52 20 38 28 26 C32 20 34 12 35 6 C36 12 38 18 40 12 C42 18 44 12 45 6 C46 12 48 20 52 26 C60 38 72 52 72 72 C72 88 58 102 40 102Z" fill="url(#pf)"/>
+        <!-- inner glow core -->
+        <path d="M40 96 C27 96 18 85 18 72 C18 57 27 46 33 36 C36 30 38 22 39 16 C40 22 41 16 42 22 C46 32 51 44 51 58 C52 72 47 86 40 96Z" fill="url(#pfcore)"/>
         <!-- tip glow -->
-        <ellipse cx="35" cy="18" rx="7" ry="9" fill="#ffe0f0" opacity="0.5"/>
-        <!-- sparkles -->
-        <circle cx="58" cy="58" r="3.5" fill="#ff80c0" opacity="0.65"/>
-        <circle cx="11" cy="52" r="2.5" fill="#ffb8d0" opacity="0.6"/>
-        <path d="M61 34L62.5 40L68.5 38L63 44L65.5 50L61 45L56.5 50L59 44L53.5 38L59.5 40Z" fill="#ffd6e8" opacity="0.85"/>
+        <ellipse cx="40" cy="10" rx="6" ry="9" fill="#ffe0f0" opacity="0.45"/>
+        <!-- sparkle right -->
+        <path d="M70 50L71.2 55L76 53.5L71.5 57.5L73.5 62.5L70 58.5L66.5 62.5L68.5 57.5L64 53.5L68.8 55Z" fill="#ffd6ee" opacity="0.8"/>
+        <!-- dot left -->
+        <circle cx="12" cy="62" r="3" fill="#ffb8d0" opacity="0.6"/>
       </svg>
     </div>
 
     <!-- 7 · Purple flame -->
     <div class="sticker sticker-7" aria-hidden="true">
-      <svg viewBox="0 0 70 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="vf" cx="50%" cy="78%" r="62%">
-            <stop offset="0%"   stop-color="#f0e8ff"/>
-            <stop offset="40%"  stop-color="#b57bff"/>
-            <stop offset="100%" stop-color="#7a28d8"/>
+          <radialGradient id="vf" cx="50%" cy="82%" r="65%">
+            <stop offset="0%"   stop-color="#f5eeff"/>
+            <stop offset="35%"  stop-color="#c090ff"/>
+            <stop offset="75%"  stop-color="#7a28d8"/>
+            <stop offset="100%" stop-color="#5010a0"/>
+          </radialGradient>
+          <radialGradient id="vfcore" cx="50%" cy="70%" r="45%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <!-- base glow -->
-        <ellipse cx="35" cy="87" rx="30" ry="14" fill="#c9a0f0" opacity="0.26"/>
-        <!-- flame body -->
-        <path d="M35 100C35 100 9 80 9 58C9 42 19 32 26 25C26 25 24 37 31 40C31 40 22 24 35 9C35 9 33 26 43 31C43 31 53 23 51 12C60 22 63 39 53 55C58 50 60 42 60 35C65 48 63 69 35 100Z" fill="url(#vf)"/>
-        <!-- inner bright core -->
-        <path d="M35 86C35 86 20 68 22 54C24 44 29 40 33 35C33 35 31 43 35 46C35 46 40 39 38 28C46 36 48 49 43 60C46 56 48 49 48 44C52 53 51 70 35 86Z" fill="#fff" opacity="0.18"/>
+        <!-- soft base shadow -->
+        <ellipse cx="40" cy="98" rx="28" ry="9" fill="#7a28d8" opacity="0.16"/>
+        <!-- clean teardrop flame -->
+        <path d="M40 102 C22 102 8 88 8 72 C8 52 20 38 28 26 C32 20 34 12 35 6 C36 12 38 18 40 12 C42 18 44 12 45 6 C46 12 48 20 52 26 C60 38 72 52 72 72 C72 88 58 102 40 102Z" fill="url(#vf)"/>
+        <!-- inner glow core -->
+        <path d="M40 96 C27 96 18 85 18 72 C18 57 27 46 33 36 C36 30 38 22 39 16 C40 22 41 16 42 22 C46 32 51 44 51 58 C52 72 47 86 40 96Z" fill="url(#vfcore)"/>
         <!-- tip glow -->
-        <ellipse cx="35" cy="18" rx="7" ry="9" fill="#eedcff" opacity="0.55"/>
-        <!-- sparkles -->
-        <circle cx="58" cy="58" r="3.5" fill="#9b5eff" opacity="0.65"/>
-        <circle cx="11" cy="52" r="2.5" fill="#c0a0f8" opacity="0.6"/>
-        <path d="M9 30L10.5 36L16.5 34L11 40L13.5 46L9 41L4.5 46L7 40L1.5 34L7.5 36Z" fill="#dcc8ff" opacity="0.85"/>
+        <ellipse cx="40" cy="10" rx="6" ry="9" fill="#eedcff" opacity="0.5"/>
+        <!-- sparkle left -->
+        <path d="M10 48L11.2 53L16 51.5L11.5 55.5L13.5 60.5L10 56.5L6.5 60.5L8.5 55.5L4 51.5L8.8 53Z" fill="#dcc8ff" opacity="0.8"/>
+        <!-- dot right -->
+        <circle cx="68" cy="62" r="3" fill="#c0a0f8" opacity="0.6"/>
       </svg>
     </div>
 
