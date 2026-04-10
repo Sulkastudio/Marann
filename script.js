@@ -1,40 +1,68 @@
 (function () {
-  const overlay = document.getElementById("openingOverlay");
-  const message = document.getElementById("openingMessage");
-  const mainContent = document.getElementById("mainContent");
   const giftBox = document.getElementById("giftBox");
   const envelopesContainer = document.getElementById("envelopes");
+  const envelopeStack = document.getElementById("envelopeStack");
+  const closeBtn = document.getElementById("closeEnvelopes");
 
   let giftsRevealed = false;
 
-  // --- OPENING SEQUENCE ---
-  setTimeout(function () {
-    message.classList.add("show");
-  }, 800);
+  // Show stickers immediately (no opening overlay)
+  document.querySelectorAll(".sticker").forEach(function (s, i) {
+    setTimeout(function () {
+      s.classList.add("visible");
+    }, i * 100);
+  });
 
-  setTimeout(function () {
-    overlay.classList.add("fade-out");
-    mainContent.classList.add("show");
-    document.querySelectorAll(".sticker").forEach(function (s, i) {
-      setTimeout(function () {
-        s.classList.add("visible");
-      }, i * 120);
+  // --- CONFETTI ON PAGE LOAD ---
+  window.addEventListener("load", function () {
+    confetti({
+      particleCount: 160,
+      spread: 90,
+      origin: { x: 0.5, y: 0.3 },
+      colors: ["#ffd6e0", "#e0c3fc", "#c1f0db", "#ffd8be", "#fff5c3", "#b8e6ff", "#ff9eb5", "#ffe45d"]
     });
-  }, 3200);
+    setTimeout(function () {
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        angle: 60,
+        origin: { x: 0, y: 0.5 },
+        colors: ["#ffd6e0", "#e0c3fc", "#ff9eb5", "#d28aff"]
+      });
+    }, 300);
+    setTimeout(function () {
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        angle: 120,
+        origin: { x: 1, y: 0.5 },
+        colors: ["#ffd8be", "#fff5c3", "#b8e6ff", "#ffe45d"]
+      });
+    }, 500);
+    setTimeout(function () {
+      confetti({
+        particleCount: 60,
+        spread: 50,
+        startVelocity: 20,
+        origin: { x: 0.5, y: 0.1 },
+        colors: ["#ff6b8a", "#c1f0db", "#e0c3fc", "#ffe45d"]
+      });
+    }, 900);
+  });
 
   // --- DOODLE FACES FOR AVATARS ---
   var faces = [
     { eyes: "round", mouth: "smile" },
-    { eyes: "dot", mouth: "open" },
+    { eyes: "dot",   mouth: "open" },
     { eyes: "happy", mouth: "grin" },
     { eyes: "round", mouth: "cat" },
-    { eyes: "dot", mouth: "smile" },
+    { eyes: "dot",   mouth: "smile" },
     { eyes: "happy", mouth: "open" },
     { eyes: "round", mouth: "grin" },
-    { eyes: "dot", mouth: "cat" },
+    { eyes: "dot",   mouth: "cat" },
     { eyes: "happy", mouth: "smile" },
     { eyes: "round", mouth: "open" },
-    { eyes: "dot", mouth: "grin" },
+    { eyes: "dot",   mouth: "grin" },
     { eyes: "happy", mouth: "cat" },
     { eyes: "round", mouth: "smile" }
   ];
@@ -89,41 +117,35 @@
     giftBox.style.animation = "none";
 
     confetti({
-      particleCount: 150,
-      spread: 80,
+      particleCount: 120,
+      spread: 75,
       origin: { y: 0.55 },
       colors: ["#ffd6e0", "#e0c3fc", "#c1f0db", "#ffd8be", "#fff5c3", "#b8e6ff", "#ff9eb5", "#ffe45d"]
     });
 
-    setTimeout(function () {
-      confetti({
-        particleCount: 80,
-        spread: 60,
-        origin: { x: 0.3, y: 0.5 },
-        colors: ["#ffd6e0", "#e0c3fc", "#c1f0db", "#ff9eb5"]
-      });
-    }, 300);
-
-    setTimeout(function () {
-      confetti({
-        particleCount: 80,
-        spread: 60,
-        origin: { x: 0.7, y: 0.5 },
-        colors: ["#ffd8be", "#fff5c3", "#b8e6ff", "#ffe45d"]
-      });
-    }, 500);
-
     envelopesContainer.classList.remove("hidden");
 
-    document.querySelectorAll(".envelope-card").forEach(function (card, i) {
+    // Stagger-animate cards into view (bottom → middle → top)
+    var cards = Array.from(envelopeStack.querySelectorAll(".envelope-card"));
+    cards.forEach(function (card) {
       card.style.opacity = "0";
-      card.style.transform = "translateY(20px)";
-      setTimeout(function () {
-        card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
-      }, 600 + i * 250);
     });
+
+    // Animate in (bottom card first so it appears, then middle, then top)
+    cards.slice().reverse().forEach(function (card, i) {
+      setTimeout(function () {
+        card.style.transition = "opacity 0.45s ease";
+        card.style.opacity = "1";
+      }, 200 + i * 180);
+    });
+
+    // After all are in, clear inline transitions so CSS class transitions take over
+    setTimeout(function () {
+      cards.forEach(function (card) {
+        card.style.transition = "";
+        card.style.opacity = "";
+      });
+    }, 200 + cards.length * 180 + 500);
   }
 
   giftBox.addEventListener("click", revealGifts);
@@ -134,10 +156,59 @@
     }
   });
 
-  // --- ENVELOPE FLIP ---
-  document.querySelectorAll(".envelope-card").forEach(function (card) {
-    card.addEventListener("click", function () {
-      card.classList.toggle("flipped");
+  // --- CLOSE ENVELOPES ---
+  closeBtn.addEventListener("click", function () {
+    var cards = envelopeStack.querySelectorAll(".envelope-card");
+    cards.forEach(function (card) {
+      card.classList.remove("flipped", "raised");
+    });
+
+    envelopesContainer.style.transition = "opacity 0.4s ease";
+    envelopesContainer.style.opacity = "0";
+    setTimeout(function () {
+      envelopesContainer.classList.add("hidden");
+      envelopesContainer.style.opacity = "";
+      envelopesContainer.style.transition = "";
+      giftsRevealed = false;
+      giftBox.style.animation = "";
+    }, 420);
+  });
+
+  // --- ENVELOPE CLICK: raise the card, then flip to reveal content ---
+  //
+  // Interaction sequence per envelope:
+  //  1st click  → card raises up out of the stack (slides up + slight rotate)
+  //  2nd click  → card flips to show its content
+  //  3rd click  → card flips back, then settles back into stack
+  //
+  // This way envelopes stay stacked but each one can be individually opened.
+
+  var cards = [
+    document.getElementById("env1"), // top
+    document.getElementById("env2"), // middle
+    document.getElementById("env3")  // bottom
+  ];
+
+  cards.forEach(function (card) {
+    var state = 0; // 0=stacked, 1=raised, 2=flipped
+
+    card.addEventListener("click", function (e) {
+      if (state === 0) {
+        // Raise the card up
+        card.classList.add("raised");
+        state = 1;
+      } else if (state === 1) {
+        // Flip to reveal
+        card.classList.add("flipped");
+        state = 2;
+      } else {
+        // Flip back, then lower
+        card.classList.remove("flipped");
+        setTimeout(function () {
+          card.classList.remove("raised");
+        }, 400);
+        state = 0;
+      }
     });
   });
 })();
