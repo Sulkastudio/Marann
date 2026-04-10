@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joyeux 30 ans Marann</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="opening-overlay" id="openingOverlay" aria-hidden="true">
+      <div class="flames">
+        <span class="flame"></span>
+        <span class="flame"></span>
+        <span class="flame"></span>
+        <span class="flame"></span>
+        <span class="flame"></span>
+      </div>
+      <p class="opening-message">Joyeux 30 ans Marann</p>
+    </div>
+
+    <header class="hero">
+      <div class="hero-top-line">30 ans de rage tendre & glitter révolutionnaire</div>
+      <h1>Joyeux 30 ans Marann</h1>
+      <p>
+        Un week-end de fête, d’amour, de musique et de vibes très très queer.
+      </p>
+      <div class="militant-badges">
+        <span>ACAB</span>
+        <span>Burn Patriarchy ♡</span>
+        <span>Queer Joy = Resistance</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="illustration-section">
+        <h2>Illustrations militantes & cute</h2>
+        <div class="illustration-grid">
+          <article class="illustration-card">
+            <span class="illustration-icon">💖</span>
+            <p class="illustration-text">ACAB</p>
+          </article>
+          <article class="illustration-card">
+            <span class="illustration-icon">🔥</span>
+            <p class="illustration-text">Burn patriarchy ♡</p>
+          </article>
+          <article class="illustration-card">
+            <span class="illustration-icon">🌈</span>
+            <p class="illustration-text">Queer joy forever</p>
+          </article>
+          <article class="illustration-card">
+            <span class="illustration-icon">⚡</span>
+            <p class="illustration-text">Riot, love, glitter</p>
+          </article>
+          <article class="illustration-card">
+            <span class="illustration-icon">✊</span>
+            <p class="illustration-text">Tendresse radicale</p>
+          </article>
+          <article class="illustration-card">
+            <span class="illustration-icon">🖤</span>
+            <p class="illustration-text">Punk féministe club</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="gift-section">
+        <h2>🎁 Clique sur le cadeau 🎁</h2>
+        <p class="hint">Le paquet bouge parce qu’il veut être ouvert.</p>
+        <button id="giftButton" class="gift-button" aria-expanded="false">
+          <span class="gift-lid"></span>
+          <span class="gift-box"></span>
+          <span class="gift-ribbon-v"></span>
+          <span class="gift-ribbon-h"></span>
+          <span class="gift-bow">🎀</span>
+          <span class="click-badge">Clique-moi</span>
+        </button>
+
+        <div id="giftList" class="gift-list hidden" aria-live="polite">
+          <h3>Les cadeaux pour Marann</h3>
+          <ul id="giftItems"></ul>
+          <p class="gift-note">Tu pourras ajouter d’autres cadeaux facilement.</p>
+        </div>
+      </section>
+
+      <section class="event-section">
+        <h2>📍 Localisation de l’événement</h2>
+        <div class="event-card">
+          <p><strong>Quand :</strong> Ce week-end, 11-12 Avril</p>
+          <p><strong>Où :</strong> Nantes</p>
+          <p class="event-note">
+            Prépare ton meilleur look : arc-en-ciel, paillettes, colère douce
+            et danse jusqu’au bout de la nuit.
+          </p>
+        </div>
+      </section>
+
+      <section class="people-section">
+        <h2>La team présente 💖</h2>
+        <div class="people-grid">
+          <article class="person-card">
+            <div class="avatar">AB</div>
+            <p>Antoine B</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">AG</div>
+            <p>Antoine G</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">AL</div>
+            <p>Alice</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">HE</div>
+            <p>Henry</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">TH</div>
+            <p>Thelma</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">AN</div>
+            <p>Anna</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">SM</div>
+            <p>Sophie M</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">MA</div>
+            <p>Mathieu</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">ML</div>
+            <p>Mailys</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">EC</div>
+            <p>Echo</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">SO</div>
+            <p>Solène</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">SC</div>
+            <p>Sophie C</p>
+          </article>
+          <article class="person-card">
+            <div class="avatar">TI</div>
+            <p>Tiffany</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <canvas id="confettiCanvas"></canvas>
+    <script src="./script.js"></script>
+  </body>
+</html>
