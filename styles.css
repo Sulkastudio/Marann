@@ -43,84 +43,6 @@ body::before {
 }
 
 /* ============================================
-   OPENING OVERLAY / FLAMES
-   ============================================ */
-
-.opening-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff6f9;
-  transition: opacity 0.9s ease, visibility 0.9s ease;
-}
-
-.opening-overlay.fade-out {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.flames-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.flame {
-  position: absolute;
-  bottom: -10%;
-  left: var(--left);
-  width: var(--w);
-  height: var(--h);
-  border-radius: 50% 50% 40% 40%;
-  opacity: 0.9;
-  animation: flameRise var(--dur) ease-in-out infinite;
-  animation-delay: var(--delay);
-  transform-origin: center bottom;
-}
-
-.flame-orange {
-  background: radial-gradient(ellipse at 50% 80%, #ffe8a3, #ffb84d 40%, #ff8c42 80%);
-}
-.flame-pink {
-  background: radial-gradient(ellipse at 50% 80%, #ffd6e0, #ff9eb5 40%, #ff6b8a 80%);
-}
-.flame-yellow {
-  background: radial-gradient(ellipse at 50% 80%, #fffbe0, #ffe45d 40%, #ffc844 80%);
-}
-.flame-coral {
-  background: radial-gradient(ellipse at 50% 80%, #ffd6d6, #ff9090 40%, #ff6b6b 80%);
-}
-.flame-purple {
-  background: radial-gradient(ellipse at 50% 80%, #f0e0ff, #c084f5 40%, #9b59b6 80%);
-}
-
-.opening-message {
-  position: relative;
-  z-index: 10;
-  font-family: "Caveat", cursive;
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
-  font-weight: 700;
-  color: var(--text);
-  text-align: center;
-  padding: 0 24px;
-  opacity: 0;
-  transform: translateY(20px) scale(0.9);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.opening-message.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* ============================================
    FLOATING STICKERS
    ============================================ */
 
@@ -227,8 +149,6 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  opacity: 0;
-  transition: opacity 0.6s ease 0.3s;
 }
 
 #mainContent.show {
@@ -241,6 +161,41 @@ section {
   border-radius: 24px;
   padding: clamp(24px, 4vw, 36px);
   backdrop-filter: blur(8px);
+}
+
+/* ============================================
+   HERO TITLE
+   ============================================ */
+
+.hero-title {
+  text-align: center;
+  padding: 20px 10px 10px;
+}
+
+.hero-title h1 {
+  font-family: "Caveat", cursive;
+  font-size: clamp(3rem, 12vw, 6rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #c07ef0 0%, #ff6b8a 40%, #ff9e5c 70%, #ffe45d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 8px rgba(192, 126, 240, 0.25));
+  animation: titlePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes titlePop {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* ============================================
@@ -289,14 +244,15 @@ section {
   75% { transform: rotate(0deg); }
 }
 
-/* Envelopes */
+/* ============================================
+   ENVELOPES — 3D STACKED
+   ============================================ */
 
 .envelopes {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   margin-top: 30px;
 }
 
@@ -304,11 +260,92 @@ section {
   display: none;
 }
 
-.envelope-card {
-  width: 260px;
-  height: 185px;
-  perspective: 900px;
+.close-envelopes {
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-light);
   cursor: pointer;
+  margin-bottom: 24px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.close-envelopes:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: scale(1.04);
+}
+
+/* The stacked 3D container. */
+.envelope-stack {
+  position: relative;
+  width: 280px;
+  height: 260px;
+  perspective: 1200px;
+  margin: 120px auto 0;
+  overflow: visible;
+}
+
+/* Each card occupies the same absolute footprint, offset via transforms */
+.envelope-card {
+  position: absolute;
+  width: 280px;
+  height: 185px;
+  cursor: pointer;
+  transition: top 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.4s ease;
+}
+
+/* Bottom card (env3) */
+.env-stack-3 {
+  top: 56px;
+  transform: rotateX(8deg) translateZ(-40px);
+  transform-origin: center bottom;
+  z-index: 1;
+  filter: brightness(0.92);
+}
+
+/* Middle card (env2) */
+.env-stack-2 {
+  top: 28px;
+  transform: rotateX(4deg) translateZ(-20px);
+  transform-origin: center bottom;
+  z-index: 2;
+  filter: brightness(0.96);
+}
+
+/* Top card (env1) */
+.env-stack-1 {
+  top: 0px;
+  transform: rotateX(0deg) translateZ(0px);
+  transform-origin: center bottom;
+  z-index: 3;
+  filter: brightness(1);
+}
+
+/* Raised state: card lifts out of the stack */
+.envelope-card.raised {
+  z-index: 20 !important;
+  filter: brightness(1) drop-shadow(0 12px 28px rgba(0, 0, 0, 0.22));
+}
+
+.env-stack-1.raised {
+  top: -110px;
+  transform: rotateX(0deg) translateZ(10px) rotate(-3deg);
+}
+
+.env-stack-2.raised {
+  top: -90px;
+  transform: rotateX(0deg) translateZ(10px) rotate(3deg);
+}
+
+.env-stack-3.raised {
+  top: -70px;
+  transform: rotateX(0deg) translateZ(10px) rotate(-2deg);
 }
 
 .envelope-card-inner {
@@ -343,18 +380,71 @@ section {
 
 .envelope-card-back {
   transform: rotateY(180deg);
-  background: linear-gradient(145deg, var(--pink), var(--lavender));
   border: 2.5px solid var(--outline);
   padding: 20px;
 }
 
+.env1-back {
+  background: linear-gradient(145deg, var(--mint), #a8f0cf);
+}
+
+.env2-back {
+  background: linear-gradient(145deg, var(--peach), #ffc59a);
+}
+
+.env3-back {
+  background: linear-gradient(145deg, var(--yellow), #ffe88a);
+}
+
 .envelope-card-back p {
   font-family: "Caveat", cursive;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--text);
   text-align: center;
   line-height: 1.4;
+}
+
+/* Theatre tickets */
+.tickets-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.ticket {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px dashed rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  padding: 8px 14px;
+}
+
+.ticket-left {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.ticket-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-title {
+  font-family: "Caveat", cursive;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ticket-sub {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
 }
 
 /* ============================================
@@ -425,8 +515,6 @@ section {
   overflow: hidden;
 }
 
-/* Doodle-face avatars: each gets a unique pastel background and a little SVG face generated in JS */
-
 .person-card:nth-child(1) .avatar  { background: var(--pink); }
 .person-card:nth-child(2) .avatar  { background: var(--sky); }
 .person-card:nth-child(3) .avatar  { background: var(--mint); }
@@ -442,38 +530,36 @@ section {
 .person-card:nth-child(13) .avatar { background: var(--mint); }
 
 /* ============================================
-   FLAME ANIMATION
-   ============================================ */
-
-@keyframes flameRise {
-  0%, 100% {
-    transform: scaleY(1) scaleX(1) translateY(0);
-  }
-  30% {
-    transform: scaleY(1.1) scaleX(0.92) translateY(-4%);
-  }
-  60% {
-    transform: scaleY(0.94) scaleX(1.06) translateY(2%);
-  }
-}
-
-/* ============================================
    RESPONSIVE
    ============================================ */
 
 @media (max-width: 520px) {
-  .sticker-1 { width: 110px; }
-  .sticker-2 { width: 130px; }
-  .sticker-3 { width: 120px; }
-  .sticker-4 { width: 105px; }
-  .sticker-5 { width: 100px; }
-  .sticker-6 { width: 90px; }
-  .sticker-7 { width: 90px; }
+  .sticker-1 { width: 120px; }
+  .sticker-2 { width: 140px; }
+  .sticker-3 { width: 130px; }
+  .sticker-4 { width: 110px; }
+  .sticker-5 { width: 110px; }
+  .sticker-6 { width: 95px; }
+  .sticker-7 { width: 95px; }
+
+  .envelope-stack {
+    width: 240px;
+    height: 220px;
+    margin-top: 100px;
+  }
 
   .envelope-card {
-    width: 220px;
-    height: 155px;
+    width: 240px;
+    height: 157px;
   }
+
+  .env-stack-3 { top: 46px; }
+  .env-stack-2 { top: 23px; }
+  .env-stack-1 { top: 0px; }
+
+  .env-stack-1.raised { top: -90px; }
+  .env-stack-2.raised { top: -70px; }
+  .env-stack-3.raised { top: -50px; }
 
   .people-grid {
     grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joyeux 30 ans Marann</title>
+    <title>Joyeux anniversaire Marann</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,23 +13,6 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <!-- ===== OPENING ANIMATION ===== -->
-    <div class="opening-overlay" id="openingOverlay">
-      <div class="flames-container">
-        <div class="flame flame-purple" style="--left:-3%;--w:18vw;--h:55%;--delay:0s;--dur:2s"></div>
-        <div class="flame flame-pink" style="--left:7%;--w:15vw;--h:72%;--delay:0.08s;--dur:1.8s"></div>
-        <div class="flame flame-yellow" style="--left:17%;--w:20vw;--h:48%;--delay:0.16s;--dur:2.2s"></div>
-        <div class="flame flame-pink" style="--left:28%;--w:16vw;--h:82%;--delay:0.04s;--dur:1.9s"></div>
-        <div class="flame flame-orange" style="--left:38%;--w:18vw;--h:52%;--delay:0.12s;--dur:2.1s"></div>
-        <div class="flame flame-purple" style="--left:48%;--w:15vw;--h:68%;--delay:0.18s;--dur:1.7s"></div>
-        <div class="flame flame-yellow" style="--left:56%;--w:20vw;--h:56%;--delay:0.02s;--dur:2.3s"></div>
-        <div class="flame flame-pink" style="--left:66%;--w:17vw;--h:76%;--delay:0.1s;--dur:1.85s"></div>
-        <div class="flame flame-purple" style="--left:76%;--w:16vw;--h:46%;--delay:0.14s;--dur:2s"></div>
-        <div class="flame flame-pink" style="--left:86%;--w:20vw;--h:62%;--delay:0.06s;--dur:2.15s"></div>
-      </div>
-      <p class="opening-message" id="openingMessage">Joyeux 30 ans Marann 🎉</p>
-    </div>
-
     <!-- ===== FLOATING STICKERS ===== -->
 
     <!-- 1 · Rainbow heart "Burn Patriarchy" -->
@@ -222,7 +205,12 @@
     </div>
 
     <!-- ===== MAIN CONTENT ===== -->
-    <main id="mainContent">
+    <main id="mainContent" class="show">
+
+      <!-- BIG TITLE -->
+      <div class="hero-title">
+        <h1>Joyeux anniversaire<br>Marann</h1>
+      </div>
 
       <!-- GIFT SECTION -->
       <section class="gift-section">
@@ -244,38 +232,81 @@
           </svg>
         </div>
 
+        <!-- 3 stacked envelopes -->
         <div class="envelopes hidden" id="envelopes">
-          <div class="envelope-card" id="env1">
-            <div class="envelope-card-inner">
-              <div class="envelope-card-front">
-                <svg viewBox="0 0 220 155" fill="none" preserveAspectRatio="xMidYMid meet">
-                  <rect x="3" y="45" width="214" height="107" rx="8" fill="#c1f0db" stroke="#222" stroke-width="3"/>
-                  <path d="M3 45L110 105L217 45" stroke="#222" stroke-width="1.5" opacity="0.15" fill="none"/>
-                  <polygon points="3,45 110,5 217,45" fill="#8ddbb5" stroke="#222" stroke-width="3" stroke-linejoin="round"/>
-                  <path d="M110 40C110 40 102 33 102 28C102 24 104 22 107 22C109 22 110 24 110 25C110 24 111 22 113 22C116 22 118 24 118 28C118 33 110 40 110 40Z" fill="#ff6b8a" stroke="#222" stroke-width="1.5"/>
-                </svg>
-              </div>
-              <div class="envelope-card-back">
-                <p>Un atelier pour créer ta bague en argent</p>
-              </div>
-            </div>
-          </div>
-          <div class="envelope-card" id="env2">
-            <div class="envelope-card-inner">
-              <div class="envelope-card-front">
-                <svg viewBox="0 0 220 155" fill="none" preserveAspectRatio="xMidYMid meet">
-                  <rect x="3" y="45" width="214" height="107" rx="8" fill="#ffd8be" stroke="#222" stroke-width="3"/>
-                  <path d="M3 45L110 105L217 45" stroke="#222" stroke-width="1.5" opacity="0.15" fill="none"/>
-                  <polygon points="3,45 110,5 217,45" fill="#ffb38a" stroke="#222" stroke-width="3" stroke-linejoin="round"/>
-                  <path d="M110 40C110 40 102 33 102 28C102 24 104 22 107 22C109 22 110 24 110 25C110 24 111 22 113 22C116 22 118 24 118 28C118 33 110 40 110 40Z" fill="#b8e6ff" stroke="#222" stroke-width="1.5"/>
-                </svg>
-              </div>
-              <div class="envelope-card-back">
-                <p>Deux places pour King Kong Meuf + Parcours Santé (punk féminin) — 29 Mai</p>
+          <button class="close-envelopes" id="closeEnvelopes" aria-label="Refermer les enveloppes">✕ Refermer</button>
+
+          <div class="envelope-stack" id="envelopeStack">
+
+            <!-- Envelope 3 (bottom) — 50€ -->
+            <div class="envelope-card env-stack-3" id="env3" data-index="2">
+              <div class="envelope-card-inner">
+                <div class="envelope-card-front">
+                  <svg viewBox="0 0 220 155" fill="none" preserveAspectRatio="xMidYMid meet">
+                    <rect x="3" y="45" width="214" height="107" rx="8" fill="#fff5c3" stroke="#222" stroke-width="3"/>
+                    <path d="M3 45L110 105L217 45" stroke="#222" stroke-width="1.5" opacity="0.15" fill="none"/>
+                    <polygon points="3,45 110,5 217,45" fill="#ffe45d" stroke="#222" stroke-width="3" stroke-linejoin="round"/>
+                    <path d="M110 40C110 40 102 33 102 28C102 24 104 22 107 22C109 22 110 24 110 25C110 24 111 22 113 22C116 22 118 24 118 28C118 33 110 40 110 40Z" fill="#ff6b8a" stroke="#222" stroke-width="1.5"/>
+                  </svg>
+                </div>
+                <div class="envelope-card-back env3-back">
+                  <p>Et il reste 50€ pour te faire plaisir !</p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+
+            <!-- Envelope 2 (middle) — billets spectacle -->
+            <div class="envelope-card env-stack-2" id="env2" data-index="1">
+              <div class="envelope-card-inner">
+                <div class="envelope-card-front">
+                  <svg viewBox="0 0 220 155" fill="none" preserveAspectRatio="xMidYMid meet">
+                    <rect x="3" y="45" width="214" height="107" rx="8" fill="#ffd8be" stroke="#222" stroke-width="3"/>
+                    <path d="M3 45L110 105L217 45" stroke="#222" stroke-width="1.5" opacity="0.15" fill="none"/>
+                    <polygon points="3,45 110,5 217,45" fill="#ffb38a" stroke="#222" stroke-width="3" stroke-linejoin="round"/>
+                    <path d="M110 40C110 40 102 33 102 28C102 24 104 22 107 22C109 22 110 24 110 25C110 24 111 22 113 22C116 22 118 24 118 28C118 33 110 40 110 40Z" fill="#b8e6ff" stroke="#222" stroke-width="1.5"/>
+                  </svg>
+                </div>
+                <div class="envelope-card-back env2-back">
+                  <!-- Two theatre tickets -->
+                  <div class="tickets-wrapper">
+                    <div class="ticket">
+                      <div class="ticket-left">🎭</div>
+                      <div class="ticket-body">
+                        <span class="ticket-title">Spectacle</span>
+                        <span class="ticket-sub">Billet n°1</span>
+                      </div>
+                    </div>
+                    <div class="ticket">
+                      <div class="ticket-left">🎭</div>
+                      <div class="ticket-body">
+                        <span class="ticket-title">Spectacle</span>
+                        <span class="ticket-sub">Billet n°2</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Envelope 1 (top) — atelier bague -->
+            <div class="envelope-card env-stack-1" id="env1" data-index="0">
+              <div class="envelope-card-inner">
+                <div class="envelope-card-front">
+                  <svg viewBox="0 0 220 155" fill="none" preserveAspectRatio="xMidYMid meet">
+                    <rect x="3" y="45" width="214" height="107" rx="8" fill="#c1f0db" stroke="#222" stroke-width="3"/>
+                    <path d="M3 45L110 105L217 45" stroke="#222" stroke-width="1.5" opacity="0.15" fill="none"/>
+                    <polygon points="3,45 110,5 217,45" fill="#8ddbb5" stroke="#222" stroke-width="3" stroke-linejoin="round"/>
+                    <path d="M110 40C110 40 102 33 102 28C102 24 104 22 107 22C109 22 110 24 110 25C110 24 111 22 113 22C116 22 118 24 118 28C118 33 110 40 110 40Z" fill="#ff6b8a" stroke="#222" stroke-width="1.5"/>
+                  </svg>
+                </div>
+                <div class="envelope-card-back env1-back">
+                  <p>Un atelier pour façonner ta propre bague en argent 💍</p>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /envelope-stack -->
+        </div><!-- /envelopes -->
       </section>
 
       <!-- EVENT SECTION -->
