@@ -245,34 +245,26 @@
         <!-- 3 illustrated gift items -->
         <div class="gift-items hidden" id="giftItems">
 
-          <!-- Item 1: Carte d'anniversaire pliée -->
+          <!-- Item 1: Carte qui sort d'une enveloppe -->
           <button class="gift-item" id="itemCard" aria-label="Voir la carte d'anniversaire">
             <div class="gift-item-illustration">
               <svg class="item-svg" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Card body (bottom half, visible) -->
-                <rect x="8" y="38" width="84" height="38" rx="5" fill="#ffd6e0" stroke="#222" stroke-width="2"/>
-                <!-- Card top half (folded) -->
-                <rect x="8" y="4" width="84" height="36" rx="5" fill="#ffb8d0" stroke="#222" stroke-width="2"/>
-                <!-- Fold line -->
-                <line x1="8" y1="40" x2="92" y2="40" stroke="#222" stroke-width="1.5" stroke-dasharray="4 3"/>
-                <!-- Little hearts on front -->
-                <path d="M50 18C50 18 46 14 46 11.5C46 9.8 47.2 8.5 48.8 8.5C49.6 8.5 50 9.2 50 9.5C50 9.2 50.4 8.5 51.2 8.5C52.8 8.5 54 9.8 54 11.5C54 14 50 18 50 18Z" fill="#ff6b8a" stroke="#222" stroke-width="1"/>
-                <path d="M30 16C30 16 27 13 27 11C27 9.5 28 8.5 29.2 8.5C29.7 8.5 30 9 30 9.2C30 9 30.3 8.5 30.8 8.5C32 8.5 33 9.5 33 11C33 13 30 16 30 16Z" fill="#ff9eb5" stroke="#222" stroke-width="0.8"/>
-                <path d="M70 16C70 16 67 13 67 11C67 9.5 68 8.5 69.2 8.5C69.7 8.5 70 9 70 9.2C70 9 70.3 8.5 70.8 8.5C72 8.5 73 9.5 73 11C73 13 70 16 70 16Z" fill="#ff9eb5" stroke="#222" stroke-width="0.8"/>
-                <!-- Flowers on bottom half -->
-                <circle cx="35" cy="57" r="5" fill="#fff" stroke="#222" stroke-width="1.2"/>
-                <circle cx="35" cy="57" r="2.5" fill="#ffe45d"/>
-                <circle cx="65" cy="57" r="5" fill="#fff" stroke="#222" stroke-width="1.2"/>
-                <circle cx="65" cy="57" r="2.5" fill="#ffe45d"/>
-                <!-- Ribbon -->
-                <line x1="50" y1="4" x2="50" y2="76" stroke="#ff6b8a" stroke-width="2"/>
-                <!-- Bow loops -->
-                <path d="M50 38 Q40 30 34 34 Q32 40 40 40 Q46 40 50 38Z" fill="#ff9eb5" stroke="#222" stroke-width="1.2"/>
-                <path d="M50 38 Q60 30 66 34 Q68 40 60 40 Q54 40 50 38Z" fill="#ff9eb5" stroke="#222" stroke-width="1.2"/>
-                <circle cx="50" cy="38" r="3" fill="#ff6b8a" stroke="#222" stroke-width="1.2"/>
+                <!-- Envelope body -->
+                <rect x="6" y="36" width="88" height="40" rx="5" fill="#ffd6e0" stroke="#222" stroke-width="2"/>
+                <!-- Envelope flap (open, folded back) -->
+                <path d="M6 36 L50 58 L94 36" stroke="#222" stroke-width="1.5" opacity="0.2" fill="none"/>
+                <polygon points="6,36 50,15 94,36" fill="#ffb8d0" stroke="#222" stroke-width="2" stroke-linejoin="round"/>
+                <!-- Card peeking out of envelope -->
+                <rect x="20" y="4" width="60" height="42" rx="4" fill="#fff" stroke="#222" stroke-width="2"/>
+                <!-- Card front decoration: small heart -->
+                <path d="M50 22C50 22 45 17 45 13.5C45 11 46.8 9.5 49 9.5C49.8 9.5 50 10.5 50 11C50 10.5 50.2 9.5 51 9.5C53.2 9.5 55 11 55 13.5C55 17 50 22 50 22Z" fill="#ff6b8a" stroke="#222" stroke-width="1"/>
+                <!-- Card front decoration: small flowers -->
+                <circle cx="32" cy="32" r="4" fill="#ffe45d" stroke="#222" stroke-width="1"/>
+                <circle cx="68" cy="32" r="4" fill="#ffe45d" stroke="#222" stroke-width="1"/>
+                <!-- Card front: wavy line hint -->
+                <path d="M30 18 Q50 14 70 18" stroke="#ff9eb5" stroke-width="1.5" fill="none" stroke-linecap="round"/>
               </svg>
             </div>
-            <span class="gift-item-label">Carte</span>
           </button>
 
           <!-- Item 2: Billet de concert -->
@@ -298,7 +290,6 @@
                 <ellipse cx="81" cy="31" rx="3" ry="2" fill="#2a5f9e" opacity="0.5"/>
               </svg>
             </div>
-            <span class="gift-item-label">Billets</span>
           </button>
 
           <!-- Item 3: Billet de 50€ -->
@@ -322,7 +313,6 @@
                 <path d="M16 55L17.2 58.7L21.2 58.7L18 60.9L19.2 64.6L16 62.4L12.8 64.6L14 60.9L10.8 58.7L14.8 58.7Z" fill="#ffe45d" opacity="0.8" transform="scale(0.6) translate(11 35)"/>
               </svg>
             </div>
-            <span class="gift-item-label">50€</span>
           </button>
 
         </div><!-- /gift-items -->
