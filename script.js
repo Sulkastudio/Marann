@@ -1,12 +1,12 @@
 (function () {
   const giftBox = document.getElementById("giftBox");
-  const envelopesContainer = document.getElementById("envelopes");
-  const envelopeStack = document.getElementById("envelopeStack");
-  const closeBtn = document.getElementById("closeEnvelopes");
+  const giftItems = document.getElementById("giftItems");
+  const overlay = document.getElementById("giftModalOverlay");
+  const modal = document.getElementById("giftModal");
 
   let giftsRevealed = false;
 
-  // Show stickers immediately (no opening overlay)
+  // Show stickers immediately
   document.querySelectorAll(".sticker").forEach(function (s, i) {
     setTimeout(function () {
       s.classList.add("visible");
@@ -109,11 +109,13 @@
     avatar.innerHTML = svg;
   });
 
-  // --- GIFT INTERACTION ---
+  // --- GIFT TOGGLE ---
   function revealGifts() {
-    if (giftsRevealed) return;
+    if (giftsRevealed) {
+      hideGifts();
+      return;
+    }
     giftsRevealed = true;
-
     giftBox.style.animation = "none";
 
     confetti({
@@ -123,29 +125,34 @@
       colors: ["#ffd6e0", "#e0c3fc", "#c1f0db", "#ffd8be", "#fff5c3", "#b8e6ff", "#ff9eb5", "#ffe45d"]
     });
 
-    envelopesContainer.classList.remove("hidden");
-
-    // Stagger-animate cards into view (bottom → middle → top)
-    var cards = Array.from(envelopeStack.querySelectorAll(".envelope-card"));
-    cards.forEach(function (card) {
-      card.style.opacity = "0";
-    });
-
-    // Animate in (bottom card first so it appears, then middle, then top)
-    cards.slice().reverse().forEach(function (card, i) {
+    giftItems.classList.remove("hidden");
+    var items = giftItems.querySelectorAll(".gift-item");
+    items.forEach(function (item) { item.style.opacity = "0"; });
+    items.forEach(function (item, i) {
       setTimeout(function () {
-        card.style.transition = "opacity 0.45s ease";
-        card.style.opacity = "1";
-      }, 200 + i * 180);
+        item.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+        item.style.opacity = "1";
+      }, 100 + i * 140);
     });
-
-    // After all are in, clear inline transitions so CSS class transitions take over
     setTimeout(function () {
-      cards.forEach(function (card) {
-        card.style.transition = "";
-        card.style.opacity = "";
+      items.forEach(function (item) {
+        item.style.transition = "";
+        item.style.opacity = "";
       });
-    }, 200 + cards.length * 180 + 500);
+    }, 100 + items.length * 140 + 400);
+  }
+
+  function hideGifts() {
+    closeModal();
+    giftItems.style.transition = "opacity 0.4s ease";
+    giftItems.style.opacity = "0";
+    setTimeout(function () {
+      giftItems.classList.add("hidden");
+      giftItems.style.opacity = "";
+      giftItems.style.transition = "";
+      giftsRevealed = false;
+      giftBox.style.animation = "";
+    }, 420);
   }
 
   giftBox.addEventListener("click", revealGifts);
@@ -156,59 +163,120 @@
     }
   });
 
-  // --- CLOSE ENVELOPES ---
-  closeBtn.addEventListener("click", function () {
-    var cards = envelopeStack.querySelectorAll(".envelope-card");
-    cards.forEach(function (card) {
-      card.classList.remove("flipped", "raised");
+  // --- MODAL LOGIC ---
+  var activeModal = null;
+
+  function openModal(contentId) {
+    // Hide all modal contents
+    modal.querySelectorAll(".modal-content").forEach(function (el) {
+      el.classList.add("hidden");
     });
 
-    envelopesContainer.style.transition = "opacity 0.4s ease";
-    envelopesContainer.style.opacity = "0";
+    var content = document.getElementById(contentId);
+    if (!content) return;
+    content.classList.remove("hidden");
+    activeModal = contentId;
+
+    overlay.classList.remove("hidden");
+
+    // Reset animation by cloning overlay (re-trigger animation)
+    overlay.style.animation = "none";
+    overlay.offsetHeight; // reflow
+    overlay.style.animation = "";
+
+    // Specific init per modal
+    if (contentId === "modalCard") {
+      initCardModal();
+    } else if (contentId === "modalTicket") {
+      initTicketModal();
+    }
+  }
+
+  function closeModal() {
+    if (!activeModal) return;
+    overlay.classList.add("hidden");
+
+    // Reset card state
+    var card = document.getElementById("modalBirthdayCard");
+    if (card) card.classList.remove("opened");
+    var heartsContainer = document.getElementById("cardHeartsContainer");
+    if (heartsContainer) heartsContainer.innerHTML = "";
+
+    // Reset ticket split
+    var ticketWrap = document.querySelector(".concert-ticket-wrap");
+    if (ticketWrap) ticketWrap.classList.remove("split");
+
+    activeModal = null;
+  }
+
+  // Close on overlay background click (not on modal itself)
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) {
+      closeModal();
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeModal();
+  });
+
+  // --- ITEM BUTTONS ---
+  document.getElementById("itemCard").addEventListener("click", function () {
+    openModal("modalCard");
+  });
+  document.getElementById("itemTicket").addEventListener("click", function () {
+    openModal("modalTicket");
+  });
+  document.getElementById("itemMoney").addEventListener("click", function () {
+    openModal("modalMoney");
+  });
+
+  // --- BIRTHDAY CARD MODAL ---
+  function initCardModal() {
+    var card = document.getElementById("modalBirthdayCard");
+    card.classList.remove("opened");
+    var heartsContainer = document.getElementById("cardHeartsContainer");
+    heartsContainer.innerHTML = "";
+
+    // Open the card after a short delay
     setTimeout(function () {
-      envelopesContainer.classList.add("hidden");
-      envelopesContainer.style.opacity = "";
-      envelopesContainer.style.transition = "";
-      giftsRevealed = false;
-      giftBox.style.animation = "";
-    }, 420);
-  });
+      card.classList.add("opened");
+      launchHearts(heartsContainer);
+    }, 300);
+  }
 
-  // --- ENVELOPE CLICK: raise the card, then flip to reveal content ---
-  //
-  // Interaction sequence per envelope:
-  //  1st click  → card raises up out of the stack (slides up + slight rotate)
-  //  2nd click  → card flips to show its content
-  //  3rd click  → card flips back, then settles back into stack
-  //
-  // This way envelopes stay stacked but each one can be individually opened.
+  function launchHearts(container) {
+    var heartChars = ["♥", "♡", "❤", "💕", "💖"];
+    var leftPositions = ["12%", "25%", "38%", "50%", "62%", "74%", "84%", "20%"];
+    var colors = ["#ff6b8a", "#ff9eb5", "#e0c3fc", "#ffd6e0", "#c1f0db", "#ffe45d"];
 
-  var cards = [
-    document.getElementById("env1"), // top
-    document.getElementById("env2"), // middle
-    document.getElementById("env3")  // bottom
-  ];
-
-  cards.forEach(function (card) {
-    var state = 0; // 0=stacked, 1=raised, 2=flipped
-
-    card.addEventListener("click", function (e) {
-      if (state === 0) {
-        // Raise the card up
-        card.classList.add("raised");
-        state = 1;
-      } else if (state === 1) {
-        // Flip to reveal
-        card.classList.add("flipped");
-        state = 2;
-      } else {
-        // Flip back, then lower
-        card.classList.remove("flipped");
+    leftPositions.forEach(function (leftPos, i) {
+      setTimeout(function () {
+        var heart = document.createElement("span");
+        heart.className = "flying-heart";
+        heart.textContent = heartChars[i % heartChars.length];
+        var rot = (Math.random() * 50 - 25) + "deg";
+        heart.style.cssText =
+          "left:" + leftPos + ";" +
+          "color:" + colors[i % colors.length] + ";" +
+          "--rot:" + rot + ";";
+        container.appendChild(heart);
         setTimeout(function () {
-          card.classList.remove("raised");
-        }, 400);
-        state = 0;
-      }
+          if (heart.parentNode) heart.parentNode.removeChild(heart);
+        }, 1900);
+      }, i * 110);
     });
-  });
+  }
+
+  // --- CONCERT TICKET MODAL ---
+  function initTicketModal() {
+    var ticketWrap = document.querySelector(".concert-ticket-wrap");
+    ticketWrap.classList.remove("split");
+    // Animate the split after a short delay
+    setTimeout(function () {
+      ticketWrap.classList.add("split");
+    }, 250);
+  }
+
 })();
