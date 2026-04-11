@@ -755,6 +755,9 @@ section {
   transition: border-color 0.2s, box-shadow 0.2s;
   text-align: center;
   letter-spacing: 0.08em;
+  /* Visually mask text without type="password" so password managers ignore it */
+  -webkit-text-security: disc;
+  text-security: disc;
 }
 
 .splash-input:focus {

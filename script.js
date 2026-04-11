@@ -3,8 +3,23 @@
   var PASSWORD = "diplodocus";
   var splash = document.getElementById("splashScreen");
   var splashForm = document.getElementById("splashForm");
-  var splashInput = document.getElementById("splashInput");
   var splashError = document.getElementById("splashError");
+
+  // Build the input dynamically so password managers never see type="password" in the DOM
+  var splashInput = document.createElement("input");
+  splashInput.type = "text";
+  splashInput.className = "splash-input";
+  splashInput.placeholder = "Mot de passe\u2026";
+  splashInput.setAttribute("aria-label", "Mot de passe");
+  splashInput.setAttribute("autocomplete", "off");
+  splashInput.setAttribute("autocorrect", "off");
+  splashInput.setAttribute("autocapitalize", "none");
+  splashInput.setAttribute("spellcheck", "false");
+  splashInput.setAttribute("data-lpignore", "true");      // LastPass
+  splashInput.setAttribute("data-1p-ignore", "true");     // 1Password
+  splashInput.setAttribute("data-bwignore", "true");      // Bitwarden
+  document.getElementById("splashInputWrap").appendChild(splashInput);
+  splashInput.focus();
 
   function dismissSplash() {
     splash.style.transition = "opacity 0.55s ease, transform 0.55s ease";
@@ -23,7 +38,7 @@
       splashError.textContent = "";
       dismissSplash();
     } else {
-      splashError.textContent = "Mot de passe incorrect 🦕";
+      splashError.textContent = "Mot de passe incorrect";
       splashError.classList.remove("shake");
       splashInput.value = "";
       void splashError.offsetWidth; // reflow to restart animation
