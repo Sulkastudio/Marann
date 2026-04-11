@@ -197,8 +197,8 @@
     overlay.classList.add("hidden");
 
     // Reset card state
-    var card = document.getElementById("modalBirthdayCard");
-    if (card) card.classList.remove("opened");
+    var scene = document.getElementById("modalCardScene");
+    if (scene) scene.classList.remove("opened");
     var heartsContainer = document.getElementById("cardHeartsContainer");
     if (heartsContainer) heartsContainer.innerHTML = "";
 
@@ -234,14 +234,14 @@
 
   // --- BIRTHDAY CARD MODAL ---
   function initCardModal() {
-    var card = document.getElementById("modalBirthdayCard");
-    card.classList.remove("opened");
+    var scene = document.getElementById("modalCardScene");
+    scene.classList.remove("opened");
     var heartsContainer = document.getElementById("cardHeartsContainer");
     heartsContainer.innerHTML = "";
 
-    // Open the card after a short delay
+    // Slide the card out after a short delay
     setTimeout(function () {
-      card.classList.add("opened");
+      scene.classList.add("opened");
       launchHearts(heartsContainer);
     }, 300);
   }
