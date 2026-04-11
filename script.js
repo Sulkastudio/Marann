@@ -1,4 +1,37 @@
 (function () {
+  // --- PASSWORD GATE ---
+  var PASSWORD = "diplodocus";
+  var splash = document.getElementById("splashScreen");
+  var splashForm = document.getElementById("splashForm");
+  var splashInput = document.getElementById("splashInput");
+  var splashError = document.getElementById("splashError");
+
+  function dismissSplash() {
+    splash.style.transition = "opacity 0.55s ease, transform 0.55s ease";
+    splash.style.opacity = "0";
+    splash.style.transform = "scale(1.04)";
+    revealStickers();
+    setTimeout(function () {
+      splash.classList.add("hidden");
+      triggerLoadConfetti();
+    }, 560);
+  }
+
+  splashForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (splashInput.value.trim().toLowerCase() === PASSWORD) {
+      splashError.textContent = "";
+      dismissSplash();
+    } else {
+      splashError.textContent = "Mot de passe incorrect 🦕";
+      splashError.classList.remove("shake");
+      splashInput.value = "";
+      void splashError.offsetWidth; // reflow to restart animation
+      splashError.classList.add("shake");
+    }
+  });
+
+  // --- MAIN PAGE LOGIC ---
   const giftBox = document.getElementById("giftBox");
   const giftItems = document.getElementById("giftItems");
   const overlay = document.getElementById("giftModalOverlay");
@@ -6,15 +39,16 @@
 
   let giftsRevealed = false;
 
-  // Show stickers immediately
-  document.querySelectorAll(".sticker").forEach(function (s, i) {
-    setTimeout(function () {
-      s.classList.add("visible");
-    }, i * 100);
-  });
+  function revealStickers() {
+    document.querySelectorAll(".sticker").forEach(function (s, i) {
+      setTimeout(function () {
+        s.classList.add("visible");
+      }, i * 100);
+    });
+  }
 
-  // --- CONFETTI ON PAGE LOAD ---
-  window.addEventListener("load", function () {
+  // --- CONFETTI (fired after splash is dismissed) ---
+  function triggerLoadConfetti() {
     confetti({
       particleCount: 160,
       spread: 90,
@@ -48,7 +82,7 @@
         colors: ["#ff6b8a", "#c1f0db", "#e0c3fc", "#ffe45d"]
       });
     }, 900);
-  });
+  }
 
   // --- DOODLE FACES FOR AVATARS ---
   var faces = [

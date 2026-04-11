@@ -13,6 +13,39 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <!-- ===== SPLASH / PASSWORD SCREEN ===== -->
+    <div id="splashScreen" class="splash-screen" role="dialog" aria-modal="true" aria-label="Entrez le mot de passe">
+      <div class="splash-rainbow-bg" aria-hidden="true">
+        <div class="splash-stripe splash-stripe-1"></div>
+        <div class="splash-stripe splash-stripe-2"></div>
+        <div class="splash-stripe splash-stripe-3"></div>
+        <div class="splash-stripe splash-stripe-4"></div>
+        <div class="splash-stripe splash-stripe-5"></div>
+        <div class="splash-stripe splash-stripe-6"></div>
+        <div class="splash-stripe splash-stripe-7"></div>
+      </div>
+      <div class="splash-card">
+        <div class="splash-stars" aria-hidden="true">
+          <span class="splash-star s1">✦</span>
+          <span class="splash-star s2">✦</span>
+          <span class="splash-star s3">✦</span>
+        </div>
+        <p class="splash-hint">Entre le mot de passe pour continuer 🦕</p>
+        <form id="splashForm" class="splash-form" autocomplete="off">
+          <input
+            id="splashInput"
+            class="splash-input"
+            type="password"
+            placeholder="Mot de passe…"
+            aria-label="Mot de passe"
+            autofocus
+          />
+          <button type="submit" class="splash-btn">Entrer →</button>
+        </form>
+        <p id="splashError" class="splash-error" aria-live="polite"></p>
+      </div>
+    </div>
+
     <!-- ===== FLOATING STICKERS ===== -->
 
     <!-- 1 · Pink heart "Burn Patriarchy" -->
