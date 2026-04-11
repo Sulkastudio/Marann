@@ -23,7 +23,7 @@
       splashError.textContent = "";
       dismissSplash();
     } else {
-      splashError.textContent = "Mot de passe incorrect 🦕";
+      splashError.textContent = "Mot de passe incorrect";
       splashError.classList.remove("shake");
       splashInput.value = "";
       void splashError.offsetWidth; // reflow to restart animation
