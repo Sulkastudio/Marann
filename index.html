@@ -15,30 +15,28 @@
   <body>
     <!-- ===== FLOATING STICKERS ===== -->
 
-    <!-- 1 · Rainbow heart "Burn Patriarchy" -->
+    <!-- 1 · Pink heart "Burn Patriarchy" -->
     <div class="sticker sticker-1" aria-hidden="true">
       <svg viewBox="0 0 120 115" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="hg" cx="45%" cy="55%" r="60%">
-            <stop offset="0%"   stop-color="#ffb8e8"/>
-            <stop offset="28%"  stop-color="#ff80cc"/>
-            <stop offset="52%"  stop-color="#c45cff"/>
-            <stop offset="75%"  stop-color="#7b6bff"/>
-            <stop offset="100%" stop-color="#4fc8ff"/>
+          <radialGradient id="hg" cx="40%" cy="45%" r="65%">
+            <stop offset="0%"   stop-color="#ffe0ef"/>
+            <stop offset="40%"  stop-color="#ff9ec8"/>
+            <stop offset="100%" stop-color="#f0508a"/>
           </radialGradient>
         </defs>
         <!-- soft outer glow -->
-        <path d="M60 108C60 108 4 70 4 36C4 18 16 6 32 6C44 6 54 14 60 24C66 14 76 6 88 6C104 6 116 18 116 36C116 70 60 108 60 108Z" fill="#e8b0ff" opacity="0.22" transform="translate(0 5) scale(1.05)" style="transform-origin:60px 57px"/>
+        <path d="M60 108C60 108 4 70 4 36C4 18 16 6 32 6C44 6 54 14 60 24C66 14 76 6 88 6C104 6 116 18 116 36C116 70 60 108 60 108Z" fill="#ffb8d8" opacity="0.3" transform="translate(0 5) scale(1.04)" style="transform-origin:60px 57px"/>
         <!-- main heart -->
         <path d="M60 108C60 108 4 70 4 36C4 18 16 6 32 6C44 6 54 14 60 24C66 14 76 6 88 6C104 6 116 18 116 36C116 70 60 108 60 108Z" fill="url(#hg)"/>
         <!-- inner white shine -->
-        <path d="M60 94C60 94 18 68 18 39C18 27 26 17 36 17C44 17 52 23 58 33C62 23 68 17 78 17C90 17 98 27 98 39C98 68 60 94 60 94Z" fill="#fff" opacity="0.16"/>
+        <path d="M60 94C60 94 18 68 18 39C18 27 26 17 36 17C44 17 52 23 58 33C62 23 68 17 78 17C90 17 98 27 98 39C98 68 60 94 60 94Z" fill="#fff" opacity="0.18"/>
         <!-- highlight sparkle top-left -->
         <path d="M28 20L29.5 26L35.5 24L30 29L32.5 35L28 30L23.5 35L26 29L20.5 24L26.5 26Z" fill="#fff" opacity="0.85"/>
         <!-- floating dots -->
-        <circle cx="94" cy="22" r="4" fill="#fff" opacity="0.65"/>
-        <circle cx="38" cy="84" r="3" fill="#fff" opacity="0.45"/>
-        <circle cx="82" cy="78" r="2.5" fill="#fff" opacity="0.45"/>
+        <circle cx="94" cy="22" r="4" fill="#fff" opacity="0.6"/>
+        <circle cx="38" cy="84" r="3" fill="#fff" opacity="0.4"/>
+        <circle cx="82" cy="78" r="2.5" fill="#fff" opacity="0.4"/>
         <!-- text: airy Caveat -->
         <text x="60" y="48" text-anchor="middle" font-family="Caveat,cursive" font-size="18" font-weight="400" fill="#fff" letter-spacing="1.5" opacity="0.95">Burn</text>
         <text x="60" y="66" text-anchor="middle" font-family="Caveat,cursive" font-size="15" font-weight="400" fill="#fff" letter-spacing="0.5" opacity="0.95">Patriarchy</text>
@@ -71,10 +69,11 @@
 
     <!-- 3 · Rainbow with fluffy clouds -->
     <div class="sticker sticker-3" aria-hidden="true">
-      <svg viewBox="0 0 130 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="-18 0 166 96" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="rc">
-            <rect x="0" y="0" width="130" height="73"/>
+            <!-- clip only to the arc region above cloud line -->
+            <rect x="-18" y="0" width="166" height="74"/>
           </clipPath>
         </defs>
         <!-- rainbow arcs — large-arc=1 sweep=1 draws the upward semicircle -->
@@ -86,14 +85,14 @@
           <path d="M38 72 A27 27 0 1 1  92 72" stroke="#50c8f8" stroke-width="9" fill="none" stroke-linecap="butt"/>
           <path d="M45 72 A20 20 0 1 1  85 72" stroke="#c060f8" stroke-width="9" fill="none" stroke-linecap="butt"/>
         </g>
-        <!-- left cloud cluster -->
-        <ellipse cx="18"  cy="76" rx="18" ry="13" fill="#fff"/>
-        <ellipse cx="6"   cy="73" rx="12" ry="10" fill="#fff"/>
-        <ellipse cx="30"  cy="73" rx="13" ry="9"  fill="#fff"/>
-        <!-- right cloud cluster -->
-        <ellipse cx="112" cy="76" rx="18" ry="13" fill="#fff"/>
-        <ellipse cx="124" cy="73" rx="12" ry="10" fill="#fff"/>
-        <ellipse cx="100" cy="73" rx="13" ry="9"  fill="#fff"/>
+        <!-- left cloud cluster — shifted left so nothing clips -->
+        <ellipse cx="10"  cy="76" rx="20" ry="14" fill="#fff"/>
+        <ellipse cx="-4"  cy="72" rx="14" ry="11" fill="#fff"/>
+        <ellipse cx="26"  cy="72" rx="15" ry="10" fill="#fff"/>
+        <!-- right cloud cluster — shifted right -->
+        <ellipse cx="120" cy="76" rx="20" ry="14" fill="#fff"/>
+        <ellipse cx="134" cy="72" rx="14" ry="11" fill="#fff"/>
+        <ellipse cx="106" cy="72" rx="15" ry="10" fill="#fff"/>
         <!-- sparkle above -->
         <path d="M65 8L67 17L76 15L69 22L72 31L65 25.5L58 31L61 22L54 15L63 17Z" fill="#ffe45d" opacity="0.9"/>
       </svg>
@@ -156,61 +155,222 @@
 
     <!-- 6 · Pink flame -->
     <div class="sticker sticker-6" aria-hidden="true">
-      <svg viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 90 115" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="pf" cx="50%" cy="82%" r="65%">
-            <stop offset="0%"   stop-color="#fff0f8"/>
-            <stop offset="35%"  stop-color="#ffaacf"/>
-            <stop offset="75%"  stop-color="#f04090"/>
-            <stop offset="100%" stop-color="#c0206a"/>
+          <radialGradient id="pf" cx="50%" cy="80%" r="60%">
+            <stop offset="0%"   stop-color="#ffe0f0"/>
+            <stop offset="45%"  stop-color="#ff9ec8"/>
+            <stop offset="100%" stop-color="#e8306a"/>
           </radialGradient>
-          <radialGradient id="pfcore" cx="50%" cy="70%" r="45%">
-            <stop offset="0%" stop-color="#fff" stop-opacity="0.55"/>
+          <radialGradient id="pfhi" cx="50%" cy="60%" r="40%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.5"/>
             <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <!-- soft base shadow -->
-        <ellipse cx="40" cy="98" rx="28" ry="9" fill="#f04090" opacity="0.18"/>
-        <!-- clean teardrop flame -->
-        <path d="M40 102 C22 102 8 88 8 72 C8 52 20 38 28 26 C32 20 34 12 35 6 C36 12 38 18 40 12 C42 18 44 12 45 6 C46 12 48 20 52 26 C60 38 72 52 72 72 C72 88 58 102 40 102Z" fill="url(#pf)"/>
-        <!-- inner glow core -->
-        <path d="M40 96 C27 96 18 85 18 72 C18 57 27 46 33 36 C36 30 38 22 39 16 C40 22 41 16 42 22 C46 32 51 44 51 58 C52 72 47 86 40 96Z" fill="url(#pfcore)"/>
-        <!-- tip glow -->
-        <ellipse cx="40" cy="10" rx="6" ry="9" fill="#ffe0f0" opacity="0.45"/>
-        <!-- sparkle right -->
-        <path d="M70 50L71.2 55L76 53.5L71.5 57.5L73.5 62.5L70 58.5L66.5 62.5L68.5 57.5L64 53.5L68.8 55Z" fill="#ffd6ee" opacity="0.8"/>
-        <!-- dot left -->
-        <circle cx="12" cy="62" r="3" fill="#ffb8d0" opacity="0.6"/>
+        <!-- base glow -->
+        <ellipse cx="45" cy="104" rx="30" ry="9" fill="#f04090" opacity="0.15"/>
+        <!--
+          Three-tongue branchy flame:
+          Wide round base, three tips rising — left, center (tallest), right.
+          All curves are smooth cubic beziers so it reads as organic fire.
+        -->
+        <path d="
+          M45 107
+          C28 107 14 95 14 80
+          C14 68 20 60 24 52
+          C20 56 17 62 16 70
+          C12 58 14 44 22 36
+          C18 40 16 48 18 54
+          C16 42 20 28 28 18
+          C26 26 26 34 28 40
+          C30 30 34 18 36 8
+          C37 18 37 28 36 36
+          C38 26 42 14 45 6
+          C48 14 52 26 54 36
+          C53 28 53 18 54 8
+          C56 18 60 30 62 40
+          C64 34 64 26 62 18
+          C70 28 74 42 72 54
+          C74 48 72 40 68 36
+          C76 44 78 58 74 70
+          C73 62 70 56 66 52
+          C70 60 76 68 76 80
+          C76 95 62 107 45 107Z
+        " fill="url(#pf)"/>
+        <!-- inner highlight -->
+        <path d="
+          M45 98 C34 98 26 89 26 80 C26 70 31 62 35 54
+          C37 48 38 40 38 33 C40 40 41 48 40 55
+          C42 48 44 40 45 34 C46 40 48 48 50 55
+          C49 48 50 40 52 33 C52 40 53 48 55 54
+          C59 62 64 70 64 80 C64 89 56 98 45 98Z
+        " fill="url(#pfhi)"/>
+        <!-- floating sparkles -->
+        <path d="M76 42L77 47L82 45.5L77.5 49.5L79.5 55L76 50.5L72.5 55L74.5 49.5L70 45.5L75 47Z" fill="#ffd6ee" opacity="0.85"/>
+        <circle cx="12" cy="58" r="3.5" fill="#ffb8d0" opacity="0.6"/>
       </svg>
     </div>
 
     <!-- 7 · Purple flame -->
     <div class="sticker sticker-7" aria-hidden="true">
-      <svg viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 90 115" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="vf" cx="50%" cy="82%" r="65%">
-            <stop offset="0%"   stop-color="#f5eeff"/>
-            <stop offset="35%"  stop-color="#c090ff"/>
-            <stop offset="75%"  stop-color="#7a28d8"/>
-            <stop offset="100%" stop-color="#5010a0"/>
+          <radialGradient id="vf" cx="50%" cy="80%" r="60%">
+            <stop offset="0%"   stop-color="#f0e0ff"/>
+            <stop offset="45%"  stop-color="#b878ff"/>
+            <stop offset="100%" stop-color="#6010c0"/>
           </radialGradient>
-          <radialGradient id="vfcore" cx="50%" cy="70%" r="45%">
-            <stop offset="0%" stop-color="#fff" stop-opacity="0.5"/>
+          <radialGradient id="vfhi" cx="50%" cy="60%" r="40%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.45"/>
             <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <!-- soft base shadow -->
-        <ellipse cx="40" cy="98" rx="28" ry="9" fill="#7a28d8" opacity="0.16"/>
-        <!-- clean teardrop flame -->
-        <path d="M40 102 C22 102 8 88 8 72 C8 52 20 38 28 26 C32 20 34 12 35 6 C36 12 38 18 40 12 C42 18 44 12 45 6 C46 12 48 20 52 26 C60 38 72 52 72 72 C72 88 58 102 40 102Z" fill="url(#vf)"/>
-        <!-- inner glow core -->
-        <path d="M40 96 C27 96 18 85 18 72 C18 57 27 46 33 36 C36 30 38 22 39 16 C40 22 41 16 42 22 C46 32 51 44 51 58 C52 72 47 86 40 96Z" fill="url(#vfcore)"/>
-        <!-- tip glow -->
-        <ellipse cx="40" cy="10" rx="6" ry="9" fill="#eedcff" opacity="0.5"/>
-        <!-- sparkle left -->
-        <path d="M10 48L11.2 53L16 51.5L11.5 55.5L13.5 60.5L10 56.5L6.5 60.5L8.5 55.5L4 51.5L8.8 53Z" fill="#dcc8ff" opacity="0.8"/>
-        <!-- dot right -->
-        <circle cx="68" cy="62" r="3" fill="#c0a0f8" opacity="0.6"/>
+        <!-- base glow -->
+        <ellipse cx="45" cy="104" rx="30" ry="9" fill="#7a28d8" opacity="0.14"/>
+        <!-- three-tongue flame (same shape, purple palette) -->
+        <path d="
+          M45 107
+          C28 107 14 95 14 80
+          C14 68 20 60 24 52
+          C20 56 17 62 16 70
+          C12 58 14 44 22 36
+          C18 40 16 48 18 54
+          C16 42 20 28 28 18
+          C26 26 26 34 28 40
+          C30 30 34 18 36 8
+          C37 18 37 28 36 36
+          C38 26 42 14 45 6
+          C48 14 52 26 54 36
+          C53 28 53 18 54 8
+          C56 18 60 30 62 40
+          C64 34 64 26 62 18
+          C70 28 74 42 72 54
+          C74 48 72 40 68 36
+          C76 44 78 58 74 70
+          C73 62 70 56 66 52
+          C70 60 76 68 76 80
+          C76 95 62 107 45 107Z
+        " fill="url(#vf)"/>
+        <!-- inner highlight -->
+        <path d="
+          M45 98 C34 98 26 89 26 80 C26 70 31 62 35 54
+          C37 48 38 40 38 33 C40 40 41 48 40 55
+          C42 48 44 40 45 34 C46 40 48 48 50 55
+          C49 48 50 40 52 33 C52 40 53 48 55 54
+          C59 62 64 70 64 80 C64 89 56 98 45 98Z
+        " fill="url(#vfhi)"/>
+        <!-- floating sparkles -->
+        <path d="M8 44L9 49L14 47.5L9.5 51.5L11.5 57L8 52.5L4.5 57L6.5 51.5L2 47.5L7 49Z" fill="#dcc8ff" opacity="0.85"/>
+        <circle cx="78" cy="60" r="3.5" fill="#c0a0f8" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <!-- 8 · Clitoris anatomique mignon -->
+    <div class="sticker sticker-8" aria-hidden="true">
+      <svg viewBox="0 0 90 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="clig" cx="50%" cy="40%" r="55%">
+            <stop offset="0%" stop-color="#ffc8e0"/>
+            <stop offset="100%" stop-color="#f07aaa"/>
+          </radialGradient>
+          <radialGradient id="clileg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffd6e8"/>
+            <stop offset="100%" stop-color="#e88ab8"/>
+          </radialGradient>
+        </defs>
+        <!-- glans (head) — round bulb at top -->
+        <ellipse cx="45" cy="28" rx="18" ry="16" fill="url(#clig)"/>
+        <!-- glans shine -->
+        <ellipse cx="39" cy="22" rx="6" ry="4" fill="#fff" opacity="0.4"/>
+        <!-- shaft -->
+        <rect x="39" y="38" width="12" height="20" rx="6" fill="#f090b8"/>
+        <!-- hood / clitoral hood -->
+        <path d="M30 44 C28 38 32 32 45 32 C58 32 62 38 60 44 C58 50 56 54 52 56 L38 56 C34 54 32 50 30 44Z" fill="#ffc0d8" opacity="0.7"/>
+        <!-- left leg (crus) -->
+        <path d="M39 56 C36 62 28 68 20 80 C17 86 18 94 24 98 C28 101 33 99 35 95 C38 88 40 78 40 70 L40 58Z" fill="url(#clileg)"/>
+        <!-- right leg (crus) -->
+        <path d="M51 56 C54 62 62 68 70 80 C73 86 72 94 66 98 C62 101 57 99 55 95 C52 88 50 78 50 70 L50 58Z" fill="url(#clileg)"/>
+        <!-- left bulb (vestibular) -->
+        <ellipse cx="22" cy="82" rx="9" ry="14" fill="#f5a8cc" transform="rotate(-18 22 82)"/>
+        <!-- right bulb -->
+        <ellipse cx="68" cy="82" rx="9" ry="14" fill="#f5a8cc" transform="rotate(18 68 82)"/>
+        <!-- cute face on glans: small dots eyes -->
+        <circle cx="40" cy="26" r="2" fill="#c0507a"/>
+        <circle cx="50" cy="26" r="2" fill="#c0507a"/>
+        <!-- little smile -->
+        <path d="M40 32 Q45 36 50 32" stroke="#c0507a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- tiny sparkle -->
+        <path d="M72 22L73 26L77 24.5L73.5 28L75 32L72 28.5L69 32L70.5 28L67 24.5L71 26Z" fill="#ffd6e8" opacity="0.9"/>
+      </svg>
+    </div>
+
+    <!-- 9 · Chaussette mignonne -->
+    <div class="sticker sticker-9" aria-hidden="true">
+      <svg viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sockg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffd6e0"/>
+            <stop offset="100%" stop-color="#ffb0c8"/>
+          </linearGradient>
+        </defs>
+        <!-- leg of the sock -->
+        <rect x="22" y="8" width="36" height="52" rx="18" fill="url(#sockg)"/>
+        <!-- cuff / ribbing at top -->
+        <rect x="22" y="8" width="36" height="18" rx="9" fill="#ff90b8"/>
+        <!-- cuff stripes -->
+        <rect x="22" y="14" width="36" height="3" rx="1.5" fill="#fff" opacity="0.5"/>
+        <rect x="22" y="20" width="36" height="3" rx="1.5" fill="#fff" opacity="0.5"/>
+        <!-- heel turn -->
+        <path d="M22 55 C22 70 24 80 34 88 L52 88 C58 82 58 70 58 58 L22 58Z" fill="#ffb0c8"/>
+        <!-- foot -->
+        <rect x="22" y="82" width="46" height="22" rx="11" fill="url(#sockg)"/>
+        <!-- toe cap -->
+        <ellipse cx="62" cy="93" rx="10" ry="11" fill="#ff90b8"/>
+        <!-- cute dots pattern on leg -->
+        <circle cx="35" cy="38" r="3" fill="#fff" opacity="0.55"/>
+        <circle cx="48" cy="32" r="2.5" fill="#fff" opacity="0.55"/>
+        <circle cx="35" cy="48" r="2" fill="#fff" opacity="0.45"/>
+        <circle cx="50" cy="46" r="3" fill="#fff" opacity="0.45"/>
+        <!-- tiny heart on cuff -->
+        <path d="M38 11C38 11 35.5 9 35.5 7.5C35.5 6.2 36.5 5.5 37.5 5.5C38 5.5 38 6 38 6C38 6 38 5.5 38.5 5.5C39.5 5.5 40.5 6.2 40.5 7.5C40.5 9 38 11 38 11Z" fill="#fff" opacity="0.8"/>
+        <!-- sparkle -->
+        <path d="M12 30L13 34.5L17.5 33L13.5 37L15.5 41.5L12 37.5L8.5 41.5L10.5 37L6.5 33L11 34.5Z" fill="#ffd6e0" opacity="0.85"/>
+      </svg>
+    </div>
+
+    <!-- 10 · Tulipe -->
+    <div class="sticker sticker-10" aria-hidden="true">
+      <svg viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="tulg" x1="0.3" y1="0" x2="0.7" y2="1">
+            <stop offset="0%" stop-color="#ff9ec8"/>
+            <stop offset="100%" stop-color="#e8306a"/>
+          </linearGradient>
+          <linearGradient id="tulstemg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#7dd87d"/>
+            <stop offset="100%" stop-color="#4ab84a"/>
+          </linearGradient>
+        </defs>
+        <!-- stem -->
+        <path d="M40 115 C40 115 38 90 40 70" stroke="url(#tulstemg)" stroke-width="5" stroke-linecap="round"/>
+        <!-- left leaf -->
+        <path d="M40 95 C35 88 22 84 18 75 C24 76 34 82 40 90Z" fill="#6aca6a"/>
+        <!-- right leaf -->
+        <path d="M40 85 C45 78 58 74 62 65 C56 66 46 72 40 80Z" fill="#6aca6a"/>
+        <!-- left petal -->
+        <path d="M40 68 C38 56 28 48 25 36 C22 26 28 16 36 14 C40 12 42 18 40 28 C38 36 38 50 40 60Z" fill="url(#tulg)"/>
+        <!-- right petal -->
+        <path d="M40 68 C42 56 52 48 55 36 C58 26 52 16 44 14 C40 12 38 18 40 28 C42 36 42 50 40 60Z" fill="url(#tulg)"/>
+        <!-- center petal (slightly lighter) -->
+        <path d="M40 66 C38 54 35 42 36 30 C37 22 40 14 40 14 C40 14 43 22 44 30 C45 42 42 54 40 66Z" fill="#ffb8d8"/>
+        <!-- petal shine left -->
+        <path d="M34 30 C32 36 30 44 31 52" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+        <!-- petal shine right -->
+        <path d="M46 30 C48 36 50 44 49 52" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+        <!-- sparkle -->
+        <path d="M62 28L63 32L67 30.5L63.5 34.5L65.5 39L62 35L58.5 39L60.5 34.5L57 30.5L61 32Z" fill="#ffd6e0" opacity="0.9"/>
+        <!-- leaf vein -->
+        <path d="M22 78 C28 78 36 82 40 90" stroke="#4ab84a" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
       </svg>
     </div>
 

@@ -64,60 +64,86 @@ body::before {
   filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.12));
 }
 
-/* sticker-1: rainbow heart — top left, close to content */
+/* Positions: ~3-5% from edge — middle ground between edge-hugging and over-centered */
+
+/* sticker-1: rainbow heart — top left */
 .sticker-1 {
-  width: 190px;
+  width: 185px;
   top: 4%;
-  left: max(8px, calc(50% - 400px));
+  left: 3%;
   animation: floatA 7s ease-in-out infinite;
 }
 
-/* sticker-2: ACAB badge — top right, close to content */
+/* sticker-2: ACAB badge — top right */
 .sticker-2 {
-  width: 220px;
+  width: 210px;
   top: 3%;
-  right: max(8px, calc(50% - 410px));
+  right: 3%;
   animation: floatB 9s ease-in-out infinite;
 }
 
-/* sticker-3: rainbow — upper-right, close to content */
+/* sticker-3: rainbow — upper-right */
 .sticker-3 {
-  width: 200px;
-  top: 22%;
-  right: max(8px, calc(50% - 400px));
+  width: 195px;
+  top: 20%;
+  right: 3%;
   animation: floatC 10s ease-in-out infinite;
 }
 
-/* sticker-4: trans flag — left middle, close to content */
+/* sticker-4: trans flag — left, upper-mid */
 .sticker-4 {
-  width: 175px;
-  top: 38%;
-  left: max(8px, calc(50% - 400px));
+  width: 170px;
+  top: 26%;
+  left: 3%;
   animation: floatA 8.5s ease-in-out infinite;
 }
 
-/* sticker-5: sparkle cluster — right middle-low, close to content */
+/* sticker-5: sparkle cluster — right mid */
 .sticker-5 {
-  width: 170px;
-  top: 57%;
-  right: max(8px, calc(50% - 400px));
+  width: 165px;
+  top: 50%;
+  right: 3%;
   animation: floatB 7.5s ease-in-out infinite;
 }
 
-/* sticker-6: pink flame — lower left, close to content */
+/* sticker-6: pink flame — left mid-low */
 .sticker-6 {
-  width: 150px;
-  top: 70%;
-  left: max(8px, calc(50% - 390px));
+  width: 145px;
+  top: 60%;
+  left: 3%;
   animation: floatC 8.2s ease-in-out infinite;
 }
 
-/* sticker-7: purple flame — bottom right, close to content */
+/* sticker-7: purple flame — right lower */
 .sticker-7 {
-  width: 150px;
-  top: 82%;
-  right: max(8px, calc(50% - 390px));
+  width: 145px;
+  top: 74%;
+  right: 3%;
   animation: floatA 7.8s ease-in-out infinite;
+}
+
+/* sticker-8: clitoris — left lower */
+.sticker-8 {
+  width: 140px;
+  top: 78%;
+  left: 3%;
+  animation: floatB 9s ease-in-out infinite;
+}
+
+/* sticker-9: chaussette — right bottom */
+.sticker-9 {
+  width: 130px;
+  top: 88%;
+  right: 3%;
+  animation: floatC 8.8s ease-in-out infinite;
+}
+
+/* sticker-10: tulipe — left bottom */
+.sticker-10 {
+  width: 130px;
+  top: 43%;
+  left: 3%;
+  animation: floatA 9.2s ease-in-out infinite;
 }
 
 @keyframes floatA {
@@ -534,13 +560,16 @@ section {
    ============================================ */
 
 @media (max-width: 520px) {
-  .sticker-1 { width: 120px; }
-  .sticker-2 { width: 140px; }
-  .sticker-3 { width: 130px; }
-  .sticker-4 { width: 110px; }
-  .sticker-5 { width: 110px; }
-  .sticker-6 { width: 95px; }
-  .sticker-7 { width: 95px; }
+  .sticker-1  { width: 100px; }
+  .sticker-2  { width: 120px; }
+  .sticker-3  { width: 110px; }
+  .sticker-4  { width: 90px; }
+  .sticker-5  { width: 90px; }
+  .sticker-6  { width: 80px; }
+  .sticker-7  { width: 80px; }
+  .sticker-8  { width: 80px; }
+  .sticker-9  { width: 75px; }
+  .sticker-10 { width: 75px; }
 
   .envelope-stack {
     width: 240px;
