@@ -317,11 +317,12 @@ section {
   height: 100%;
 }
 
-.gift-item-label {
-  font-family: "Caveat", cursive;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-light);
+.gift-item:focus {
+  outline: none;
+}
+
+.gift-item:focus-visible .gift-item-illustration {
+  filter: drop-shadow(0 0 6px rgba(192, 126, 240, 0.7));
 }
 
 /* ============================================
