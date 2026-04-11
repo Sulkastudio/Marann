@@ -65,76 +65,79 @@ body::before {
 }
 
 /*
-  Staggered (quinconce) layout — 8 stickers, ~6% from edges.
-  Left column offset: 6% | Right column offset: 6%
-  Vertical positions interleaved so left & right never align.
+  Quinconce layout: stickers on the SAME side alternate between two
+  horizontal offsets so they don't form a rigid vertical column.
+  "Near" = closer to center column, "Far" = further from it.
 
-  LEFT:   4%  →  32%  →  57%  →  80%
-  RIGHT:  14% →  44%  →  67%  →  90%
+  Left side:  Far=3%  Near=10%   (3% hugs edge, 10% is 10% in from left)
+  Right side: Far=3%  Near=10%   (mirrored)
+
+  Vertical spread across full page, capped so nothing overflows off-screen.
+  "30 ans bitch" heart moved to the top-right area.
 */
 
-/* sticker-1: heart "Burn Patriarchy" — left, row 1 */
+/* sticker-1: heart "Burn Patriarchy" — LEFT, far (near edge), top */
 .sticker-1 {
-  width: 185px;
-  top: 4%;
-  left: 6%;
+  width: 180px;
+  top: 3%;
+  left: 3%;
   animation: floatA 7s ease-in-out infinite;
 }
 
-/* sticker-2: ACAB badge — right, row 1.5 */
+/* sticker-2: ACAB badge — RIGHT, near (closer to content), upper */
 .sticker-2 {
-  width: 210px;
-  top: 14%;
-  right: 6%;
+  width: 205px;
+  top: 8%;
+  right: 10%;
   animation: floatB 9s ease-in-out infinite;
 }
 
-/* sticker-3: rainbow — left, row 2 */
+/* sticker-8: heart "30 ans bitch" — RIGHT, far, upper-mid (moved up!) */
+.sticker-8 {
+  width: 178px;
+  top: 26%;
+  right: 3%;
+  animation: floatC 8.6s ease-in-out infinite;
+}
+
+/* sticker-3: rainbow — LEFT, near (closer to content), mid */
 .sticker-3 {
-  width: 195px;
-  top: 32%;
-  left: 6%;
+  width: 190px;
+  top: 35%;
+  left: 10%;
   animation: floatC 10s ease-in-out infinite;
 }
 
-/* sticker-4: trans flag — right, row 2.5 */
+/* sticker-4: trans flag — RIGHT, near, mid-low */
 .sticker-4 {
-  width: 168px;
-  top: 44%;
-  right: 6%;
+  width: 165px;
+  top: 50%;
+  right: 10%;
   animation: floatA 8.5s ease-in-out infinite;
 }
 
-/* sticker-5: sparkle cluster — left, row 3 */
+/* sticker-5: sparkle cluster — LEFT, far, mid-low */
 .sticker-5 {
-  width: 162px;
-  top: 57%;
-  left: 6%;
+  width: 158px;
+  top: 58%;
+  left: 3%;
   animation: floatB 7.5s ease-in-out infinite;
 }
 
-/* sticker-6: pink flame — right, row 3.5 */
+/* sticker-6: pink flame — RIGHT, far, lower */
 .sticker-6 {
-  width: 145px;
-  top: 67%;
-  right: 6%;
+  width: 138px;
+  top: 70%;
+  right: 3%;
   animation: floatC 8.2s ease-in-out infinite;
 }
 
-/* sticker-7: purple flame — left, row 4 */
+/* sticker-7: purple flame — LEFT, near, lower (capped so it stays on screen) */
 .sticker-7 {
-  width: 145px;
-  top: 80%;
-  left: 6%;
+  width: 138px;
+  top: 78%;
+  left: 10%;
   animation: floatA 7.8s ease-in-out infinite;
-}
-
-/* sticker-8: heart "30 ans bitch" — right, row 4.5 */
-.sticker-8 {
-  width: 185px;
-  top: 90%;
-  right: 6%;
-  animation: floatB 8.6s ease-in-out infinite;
 }
 
 @keyframes floatA {
@@ -619,14 +622,14 @@ section {
    ============================================ */
 
 @media (max-width: 520px) {
-  .sticker-1 { width: 100px; }
-  .sticker-2 { width: 120px; }
-  .sticker-3 { width: 110px; }
-  .sticker-4 { width: 95px; }
-  .sticker-5 { width: 92px; }
-  .sticker-6 { width: 82px; }
-  .sticker-7 { width: 82px; }
-  .sticker-8 { width: 100px; }
+  .sticker-1 { width: 95px;  left: 2%;  }
+  .sticker-2 { width: 115px; right: 4%; }
+  .sticker-3 { width: 105px; left: 4%;  }
+  .sticker-4 { width: 90px;  right: 4%; }
+  .sticker-5 { width: 88px;  left: 2%;  }
+  .sticker-6 { width: 78px;  right: 2%; }
+  .sticker-7 { width: 78px;  left: 4%;  }
+  .sticker-8 { width: 95px;  right: 2%; }
 
   .gift-item-illustration {
     width: 70px;

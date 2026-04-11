@@ -155,113 +155,45 @@
 
     <!-- 6 · Pink flame -->
     <div class="sticker sticker-6" aria-hidden="true">
-      <svg viewBox="0 0 90 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="pf" cx="50%" cy="80%" r="60%">
+          <radialGradient id="pf" cx="45%" cy="75%" r="65%">
             <stop offset="0%"   stop-color="#ffe0f0"/>
-            <stop offset="45%"  stop-color="#ff9ec8"/>
+            <stop offset="50%"  stop-color="#ff9ec8"/>
             <stop offset="100%" stop-color="#e8306a"/>
           </radialGradient>
-          <radialGradient id="pfhi" cx="50%" cy="60%" r="40%">
-            <stop offset="0%" stop-color="#fff" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-          </radialGradient>
         </defs>
-        <!-- base glow -->
-        <ellipse cx="45" cy="104" rx="30" ry="9" fill="#f04090" opacity="0.15"/>
-        <!--
-          Three-tongue branchy flame:
-          Wide round base, three tips rising — left, center (tallest), right.
-          All curves are smooth cubic beziers so it reads as organic fire.
-        -->
-        <path d="
-          M45 107
-          C28 107 14 95 14 80
-          C14 68 20 60 24 52
-          C20 56 17 62 16 70
-          C12 58 14 44 22 36
-          C18 40 16 48 18 54
-          C16 42 20 28 28 18
-          C26 26 26 34 28 40
-          C30 30 34 18 36 8
-          C37 18 37 28 36 36
-          C38 26 42 14 45 6
-          C48 14 52 26 54 36
-          C53 28 53 18 54 8
-          C56 18 60 30 62 40
-          C64 34 64 26 62 18
-          C70 28 74 42 72 54
-          C74 48 72 40 68 36
-          C76 44 78 58 74 70
-          C73 62 70 56 66 52
-          C70 60 76 68 76 80
-          C76 95 62 107 45 107Z
-        " fill="url(#pf)"/>
-        <!-- inner highlight -->
-        <path d="
-          M45 98 C34 98 26 89 26 80 C26 70 31 62 35 54
-          C37 48 38 40 38 33 C40 40 41 48 40 55
-          C42 48 44 40 45 34 C46 40 48 48 50 55
-          C49 48 50 40 52 33 C52 40 53 48 55 54
-          C59 62 64 70 64 80 C64 89 56 98 45 98Z
-        " fill="url(#pfhi)"/>
-        <!-- floating sparkles -->
-        <path d="M76 42L77 47L82 45.5L77.5 49.5L79.5 55L76 50.5L72.5 55L74.5 49.5L70 45.5L75 47Z" fill="#ffd6ee" opacity="0.85"/>
-        <circle cx="12" cy="58" r="3.5" fill="#ffb8d0" opacity="0.6"/>
+        <!-- classic single flame: wide round base, gently curved tip leaning slightly right -->
+        <path d="M30 86 C14 86 6 74 6 62 C6 46 16 34 22 22 C24 16 25 10 27 5 C29 12 28 20 32 26 C36 18 36 10 38 4 C42 14 46 26 44 40 C48 34 50 24 50 18 C56 30 54 48 46 60 C50 56 52 48 52 42 C56 52 54 68 42 78 C38 82 34 86 30 86Z" fill="url(#pf)"/>
+        <!-- inner glow -->
+        <path d="M30 78 C20 78 14 69 16 60 C18 50 24 42 28 34 C29 28 30 22 31 17 C33 24 31 32 34 38 C38 30 38 22 40 16 C43 26 42 40 38 52 C42 46 44 38 44 32 C46 42 44 58 36 68 C34 72 32 78 30 78Z" fill="#fff" opacity="0.22"/>
+        <!-- tip soft glow -->
+        <ellipse cx="32" cy="8" rx="5" ry="7" fill="#ffe0f0" opacity="0.5"/>
+        <!-- sparkle -->
+        <circle cx="50" cy="46" r="3" fill="#ffb8d0" opacity="0.6"/>
+        <circle cx="8"  cy="52" r="2.5" fill="#ffd6e8" opacity="0.5"/>
       </svg>
     </div>
 
     <!-- 7 · Purple flame -->
     <div class="sticker sticker-7" aria-hidden="true">
-      <svg viewBox="0 0 90 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="vf" cx="50%" cy="80%" r="60%">
+          <radialGradient id="vf" cx="55%" cy="75%" r="65%">
             <stop offset="0%"   stop-color="#f0e0ff"/>
-            <stop offset="45%"  stop-color="#b878ff"/>
+            <stop offset="50%"  stop-color="#b878ff"/>
             <stop offset="100%" stop-color="#6010c0"/>
           </radialGradient>
-          <radialGradient id="vfhi" cx="50%" cy="60%" r="40%">
-            <stop offset="0%" stop-color="#fff" stop-opacity="0.45"/>
-            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-          </radialGradient>
         </defs>
-        <!-- base glow -->
-        <ellipse cx="45" cy="104" rx="30" ry="9" fill="#7a28d8" opacity="0.14"/>
-        <!-- three-tongue flame (same shape, purple palette) -->
-        <path d="
-          M45 107
-          C28 107 14 95 14 80
-          C14 68 20 60 24 52
-          C20 56 17 62 16 70
-          C12 58 14 44 22 36
-          C18 40 16 48 18 54
-          C16 42 20 28 28 18
-          C26 26 26 34 28 40
-          C30 30 34 18 36 8
-          C37 18 37 28 36 36
-          C38 26 42 14 45 6
-          C48 14 52 26 54 36
-          C53 28 53 18 54 8
-          C56 18 60 30 62 40
-          C64 34 64 26 62 18
-          C70 28 74 42 72 54
-          C74 48 72 40 68 36
-          C76 44 78 58 74 70
-          C73 62 70 56 66 52
-          C70 60 76 68 76 80
-          C76 95 62 107 45 107Z
-        " fill="url(#vf)"/>
-        <!-- inner highlight -->
-        <path d="
-          M45 98 C34 98 26 89 26 80 C26 70 31 62 35 54
-          C37 48 38 40 38 33 C40 40 41 48 40 55
-          C42 48 44 40 45 34 C46 40 48 48 50 55
-          C49 48 50 40 52 33 C52 40 53 48 55 54
-          C59 62 64 70 64 80 C64 89 56 98 45 98Z
-        " fill="url(#vfhi)"/>
-        <!-- floating sparkles -->
-        <path d="M8 44L9 49L14 47.5L9.5 51.5L11.5 57L8 52.5L4.5 57L6.5 51.5L2 47.5L7 49Z" fill="#dcc8ff" opacity="0.85"/>
-        <circle cx="78" cy="60" r="3.5" fill="#c0a0f8" opacity="0.6"/>
+        <!-- classic single flame leaning slightly left -->
+        <path d="M30 86 C14 86 6 74 6 62 C6 46 16 34 22 22 C24 16 25 10 27 5 C29 12 28 20 32 26 C36 18 36 10 38 4 C42 14 46 26 44 40 C48 34 50 24 50 18 C56 30 54 48 46 60 C50 56 52 48 52 42 C56 52 54 68 42 78 C38 82 34 86 30 86Z" fill="url(#vf)"/>
+        <!-- inner glow -->
+        <path d="M30 78 C20 78 14 69 16 60 C18 50 24 42 28 34 C29 28 30 22 31 17 C33 24 31 32 34 38 C38 30 38 22 40 16 C43 26 42 40 38 52 C42 46 44 38 44 32 C46 42 44 58 36 68 C34 72 32 78 30 78Z" fill="#fff" opacity="0.2"/>
+        <!-- tip soft glow -->
+        <ellipse cx="32" cy="8" rx="5" ry="7" fill="#f0e0ff" opacity="0.5"/>
+        <!-- sparkle -->
+        <circle cx="50" cy="46" r="3" fill="#c0a0f8" opacity="0.6"/>
+        <circle cx="8"  cy="52" r="2.5" fill="#dcc8ff" opacity="0.5"/>
       </svg>
     </div>
 
