@@ -1,6 +1,6 @@
 (function () {
   // --- PASSWORD GATE ---
-  var PASSWORD = "diplodocus";
+  var PASSWORDS = ["diplodocus", "dinosaure"];
   var splash = document.getElementById("splashScreen");
   var splashForm = document.getElementById("splashForm");
   var splashError = document.getElementById("splashError");
@@ -34,7 +34,7 @@
 
   splashForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    if (splashInput.value.trim().toLowerCase() === PASSWORD) {
+    if (PASSWORDS.indexOf(splashInput.value.trim().toLowerCase()) !== -1) {
       splashError.textContent = "";
       dismissSplash();
     } else {
