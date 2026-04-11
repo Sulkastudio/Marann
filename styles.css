@@ -643,9 +643,11 @@ section {
 /* Animated diagonal rainbow stripes */
 .splash-rainbow-bg {
   position: absolute;
-  inset: 0;
+  /* Extend well beyond viewport so skew never reveals gaps at edges */
+  inset: -30% -10%;
   display: flex;
   flex-direction: column;
+  transform: skewY(-6deg);
   animation: splash-shift 8s linear infinite;
 }
 
@@ -656,8 +658,6 @@ section {
 
 .splash-stripe {
   flex: 1;
-  transform: skewY(-6deg) scaleY(1.25);
-  transform-origin: left center;
 }
 
 .splash-stripe-1 { background: #ffb3ba; } /* pastel red/pink   */
@@ -755,9 +755,6 @@ section {
   transition: border-color 0.2s, box-shadow 0.2s;
   text-align: center;
   letter-spacing: 0.08em;
-  /* Visually mask text without type="password" so password managers ignore it */
-  -webkit-text-security: disc;
-  text-security: disc;
 }
 
 .splash-input:focus {
